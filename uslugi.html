@@ -61,7 +61,9 @@ h1,h2,h3,.serif{font-family:'PF',Georgia,serif;font-weight:500;line-height:1.16}
 
 /* hero */
 .hero{padding:64px 0 40px;max-width:720px}
-.kicker{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.sec-ico{width:17px;height:17px;vertical-align:-3px;margin-right:9px;
+  stroke:#FFC66E;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.kicker{display:flex;align-items:center;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .hero h1{font-size:clamp(34px,6vw,58px);margin:14px 0 18px}
 .hero h1 em{font-style:normal;color:var(--gold-l)}
 .hero p{font-size:clamp(15px,2.2vw,18px);color:rgba(244,228,200,.8);max-width:600px}
@@ -271,29 +273,23 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
 <div class="wrap">
 
-  <!-- ЧИСЛА МЕТОДА -->
-  <section class="nums" id="chisla">
-    <div class="kicker">Числа метода</div>
-    <h2 class="sec">Вся система — в четырёх числах</h2>
-    <div class="nm-line">
-      <div class="nm"><div class="ring"><b>5</b></div><span>треугольников — пять сфер жизни</span></div>
-      <div class="nm"><div class="ring"><b>1</b></div><span>высшая миссия души в центре</span></div>
-      <div class="nm"><div class="ring"><b>4</b></div><span>линии рода на основаниях</span></div>
-      <div class="nm"><div class="ring"><b>3</b></div><span>шага на неделю после разбора</span></div>
-    </div>
-  </section>
-
   <!-- МЕТОД -->
   <section id="metod">
-    <div class="kicker">Метод</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4"/></svg>Метод</div>
     <h2 class="sec">Что такое «Кармическая звезда»</h2>
     <p class="lead">Нумерология изучает связь чисел и явлений: почему одни и те же цифры встречаются рядом,
        как на нас влияет номер дома или квартиры, почему события приходят именно в эти даты.
        Но главный числовой код человека — <b>дата рождения</b>. В ней зашиты характер, таланты,
        кармические задачи и миссия этого воплощения.</p>
-    <p class="lead">В основе — <b>карма и дхарма</b>, закон причинно-следственной связи: карма — последствия
-       поступков, дхарма — их созидательная сторона. Кармическая нумерология читает этот след
-       и отвечает на вопросы, на которые иначе ответа не найти.</p>
+    <p class="lead"><b>Карма</b> — это не наказание и не «судьба». Это след: то, что ты уже сделала,
+       и то, что тебе возвращается тем же поступком. Проще говоря — привычка, которая повторяется,
+       пока её не увидят. Карма показывает, где ты ходишь по кругу.</p>
+    <p class="lead"><b>Дхарма</b> — вторая половина того же закона. Это твоё действие «по назначению»:
+       то, что ты делаешь из своей силы, а не из страха. Там, где карма объясняет, почему повторяется,
+       дхарма показывает, чем это заменить. Одно без другого не работает: увидеть ошибку и не дать
+       себе нового действия — значит вернуться в тот же круг.</p>
+    <p class="lead">Кармическая нумерология читает этот след по дате рождения: где карма держит,
+       а где открыта дхарма — и какое конкретное действие их разделяет.</p>
     <p class="lead">«Кармическая звезда» — способ увидеть всё это сразу. Пять треугольников — Личность,
        Духовность, Реализация, Отношения, Здоровье — и шестая сфера: Высшая миссия души.
        В каждом треугольнике три вершины, и они связаны в одну цепочку.</p>
@@ -326,7 +322,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
   <!-- СХЕМА -->
   <section id="shema">
-    <div class="kicker">Схема</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3zM12 10v5M9.5 20h5"/></svg>Схема</div>
     <h2 class="sec">Как она устроена</h2>
     <p class="lead">Пять лучей — пять сфер. Внутри, на вершинах основания, — родовые программы.
        Внизу по центру — роковая ошибка. В середине — высшая миссия души.</p>
@@ -459,23 +455,12 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
   <!-- ПОДРОБНО -->
   <section id="podrobno">
-    <div class="kicker">Подробно</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2 2 4 4 0 1 1-4-4 7 7 0 1 1 7 7 10 10 0 1 1-10-10"/></svg>Подробно</div>
     <h2 class="sec">Разбираемся по частям</h2>
     <p class="lead">Читай то, что откликается. Можно по порядку, можно — с той сферы, которая болит сейчас.</p>
 
     <div class="faq">
-      <details open>
-        <summary>Как работает треугольник: ошибка → линия духа → предназначение</summary>
-        <p><b>Главная ошибка</b> — нижняя вершина. Это автоматический сценарий: ты проваливаешься в него,
-           не успев подумать. Он пришёл из прошлого воплощения или от рода — поэтому и повторяется.
-           Пока ошибка активна, она блокирует выход к предназначению, и сфера идёт по кругу.</p>
-        <p><b>Линия духа</b> — инструмент. Она показывает, какое качество включить и какое действие сделать,
-           чтобы энергию вытащить из минуса в плюс. Это не про «взять себя в руки», а про конкретный
-           внутренний шаг, который ты можешь назвать и повторить.</p>
-        <p><b>Предназначение</b> — верхняя вершина. Плюс сферы: как она выглядит, когда ошибка пройдена.
-           Оно открывается не само: только через линию духа. Если тянуться к нему напрямую,
-           будешь скатываться обратно — не хватит опоры.</p>
-      </details>
+      
 
       <details>
         <summary>Треугольник Личности · до 25 лет</summary>
@@ -539,18 +524,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
            миссия остаётся идеей, а не делом.</p>
       </details>
 
-      <details>
-        <summary>Родовые ошибки · четыре линии</summary>
-        <p>Мы наследуем не только гены, но и программы. Душа приходит в род, где ошибки совпадают
-           с её задачами: то, с чем не справились родители, по контракту проходим мы.</p>
-        <p><b>Ошибка отца по его мужской линии</b> — недостаток силы, ответственности, умения держать слово.<br>
-           <b>Ошибка мамы по её мужской линии</b> — травмы в отношениях с мужчинами и в своей роли женщины.<br>
-           <b>Ошибка отца по женской линии</b> — неуважение к женскому: доминирование, подавление.<br>
-           <b>Ошибка мамы по её женской линии</b> — низкая самооценка, страхи и установки о себе,
-           которые передаются дочерям и внучкам.</p>
-        <p><b>Важно:</b> мы не отвечаем за поступки предков. Но можем изменить своё отношение к ним —
-           и этим прерываем цикл. Это и есть работа с родом.</p>
-      </details>
+      
 
       <details>
         <summary>Роковая ошибка · нижняя точка звезды</summary>
@@ -565,7 +539,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
   <!-- КАК ПРОХОДИТ -->
   <section id="kak">
-    <div class="kicker">Как всё проходит</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 1-12 5-14 12l-1 4 4-1C16 17 19 12 20 4zM5 19l8-8"/></svg>Как всё проходит</div>
     <h2 class="sec">Три шага, без лабиринта</h2>
     <ol class="steps">
       <li><b>Бесплатная диагностика.</b> Три вопроса — 3 минуты. Сразу получаешь персональный разбор
@@ -578,29 +552,8 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
   </section>
 
   <!-- УСЛУГИ -->
-  <section id="simvoly">
-    <div class="kicker">Язык метода</div>
-    <h2 class="sec">Символы и элементы</h2>
-    <p class="lead">Каждый знак в разборе — не украшение, а часть языка: стихии, число, цикл, путь.
-       Ничего случайного: только то, что можно прочитать.</p>
-    <div class="sym-grid">
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 5v14M24 29v14M5 24h14M29 24h14M11 11l9 9M28 28l9 9M37 11l-9 9M19 28l-9 9"/></svg><i>Свет</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 41c7 0 12-5 12-11 0-8-8-11-8-19 0 0-6 4-6 11 0 3-2 4-3 2 0 0-3 3-3 7 0 6 4 10 8 10z"/></svg><i>Огонь</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M6 19c5-6 11-6 16 0s11 6 16 0M6 29c5-6 11-6 16 0s11 6 16 0"/></svg><i>Вода</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 8l16 28H8zM24 20v10M19 34h10"/></svg><i>Земля</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M8 30c4 0 6-3 8-8s6-8 10-8 6 3 6 6-3 5-5 5-4-2-4-4M8 38h32"/></svg><i>Воздух</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><path d="M24 13v11l7 5"/></svg><i>Число</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 24a4 4 0 1 1 4 4 8 8 0 1 1-8-8 12 12 0 1 1 12 12 16 16 0 1 1-16-16"/></svg><i>Цикл</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M38 10c-12 2-20 9-24 20l-2 6 6-2c11-4 18-12 20-24zM12 36l14-14"/></svg><i>Перо</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 8c6 8 10 12 10 18a10 10 0 0 1-20 0c0-6 4-10 10-18z"/></svg><i>Исток</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="17" ry="7" transform="rotate(-28 24 24)"/><circle cx="24" cy="24" r="4"/></svg><i>Орбита</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 24c-3-5-7-8-11-8a8 8 0 1 0 0 16c4 0 8-3 11-8s7-8 11-8a8 8 0 1 1 0 16c-4 0-8-3-11-8z"/></svg><i>Баланс</i></div>
-      <div class="sym"><svg viewBox="0 0 48 48"><path d="M24 40c-8 0-15-5-15-12 0 0 4 3 8 3-3-4-4-10-1-15 3 4 6 6 8 10 2-4 5-6 8-10 3 5 2 11-1 15 4 0 8-3 8-3 0 7-7 12-15 12z"/></svg><i>Рост</i></div>
-    </div>
-  </section>
-
   <section id="uslugi">
-    <div class="kicker">Услуги</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></svg>Услуги</div>
     <h2 class="sec">Форматы и цены</h2>
 
     <div class="card gold">
@@ -715,7 +668,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
   <!-- FAQ -->
   <section id="faq">
-    <div class="kicker">Вопросы</div>
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-28 12 12)"/><circle cx="12" cy="12" r="2.4"/></svg>Вопросы</div>
     <h2 class="sec">Что обычно спрашивают</h2>
     <div class="faq">
       <details>
