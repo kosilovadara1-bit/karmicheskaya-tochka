@@ -1578,19 +1578,20 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
       }).catch(function(){ return false; });
     }
 
-    // два независимых канала: FormSubmit + Web3Forms (если вписан ключ).
-    // заявка считается доставленной, если ответил хотя бы один.
+    // каналы доставки. если вписан ключ Web3Forms — он основной (FormSubmit
+    // не дублируем, чтобы не присылать по два письма на каждую заявку);
+    // если ключа нет — работаем через FormSubmit.
     function sendLead(payload){
       var jobs = [];
-      if(SUBMIT_URL) jobs.push(postJSON(SUBMIT_URL, payload));
-      if(WEB3_KEY) jobs.push(postJSON('https://api.web3forms.com/submit', {
+      if(WEB3_KEY) return postJSON('https://api.web3forms.com/submit', {
         access_key: WEB3_KEY,
         subject: payload._subject,
         from_name: 'Анкета «Твоя кармическая точка»',
         "Имя": payload["Имя"], "Email": payload["Email"],
         "Сфера": payload["Сфера"], "Ответ 2": payload["Ответ 2"],
         "Ответ 3": payload["Ответ 3"], "Строка для таблицы": payload["Строка для таблицы"]
-      }));
+      });
+      if(SUBMIT_URL) jobs.push(postJSON(SUBMIT_URL, payload));
       if(!jobs.length) return Promise.resolve(false);
       return Promise.all(jobs).then(function(res){
         for(var i = 0; i < res.length; i++){ if(res[i]) return true; }
