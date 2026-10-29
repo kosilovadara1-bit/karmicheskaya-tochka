@@ -372,20 +372,14 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     <section class="step" data-step="6">
       <div class="kicker">Последний шаг</div>
       <h1>Как вас зовут и как вы получите разбор?</h1>
-      <p class="sub">Разбор собирается по твоим ответам прямо здесь: нажмёшь «Скачать разбор» — и файл сразу
-      окажется у тебя. Ничего ждать и никуда идти не нужно.</p>
+      <p class="sub">Разбор собирается по твоим ответам прямо здесь: нажмёшь «Скачать разбор» —
+      и файл сразу окажется у тебя.</p>
 
-      <div class="row">
-        <div class="field" id="f4">
-          <label class="f" for="name">Как тебя зовут?</label>
-          <input type="text" id="name" placeholder="Анна" autocomplete="given-name">
-        </div>
-        <div class="field" id="f5">
-          <label class="f" for="email">Почта — на всякий случай</label>
-          <input type="email" id="email" placeholder="anna@mail.ru" autocomplete="email" inputmode="email">
-        </div>
+      <div class="field" id="f4">
+        <label class="f" for="name">Как тебя зовут?</label>
+        <input type="text" id="name" placeholder="Анна" autocomplete="given-name">
       </div>
-      <div class="err" id="err4">Напиши имя и почту — иначе некуда отправить разбор.</div>
+      <div class="err" id="err4">Напиши имя — без него разбор не собрать.</div>
 
       <label class="consent">
         <input type="checkbox" id="consent">
@@ -1209,7 +1203,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
   var next = document.getElementById('next');
   var back = document.getElementById('back');
   var acts = document.getElementById('actions');
-  var data = {sphere:'', a2:'', a3:'', name:'', email:''};
+  var data = {sphere:'', a2:'', a3:'', name:'', email:''};   // почту больше не спрашиваем
 
   function show(n){
     step = n;
@@ -1255,7 +1249,6 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
   bindCounter('a2','c2'); bindCounter('a3','c3');
 
   document.getElementById('name').addEventListener('input', function(e){ data.name = e.target.value; save(); });
-  document.getElementById('email').addEventListener('input', function(e){ data.email = e.target.value; save(); });
 
   // ---- подсказки
   document.querySelectorAll('.hint').forEach(function(h){
@@ -1280,7 +1273,6 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
       document.getElementById('a2').value = data.a2 || '';
       document.getElementById('a3').value = data.a3 || '';
       document.getElementById('name').value = data.name || '';
-      document.getElementById('email').value = data.email || '';
       document.getElementById('a2').dispatchEvent(new Event('input'));
       document.getElementById('a3').dispatchEvent(new Event('input'));
       if(data.sphere){
@@ -1311,9 +1303,8 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     }
     if(step === 6){
       var okName = data.name.trim().length >= 2;
-      var okMail = /^[^@\s]+@[^@\s]+\.[A-Za-zА-Яа-я]{2,}$/.test(data.email.trim());
-      if(!okName || !okMail){ err('err4', true); bad('f4', !okName); bad('f5', !okMail); return false; }
-      err('err4', false); bad('f4', false); bad('f5', false);
+      if(!okName){ err('err4', true); bad('f4', true); return false; }
+      err('err4', false); bad('f4', false);
       if(!document.getElementById('consent').checked){ err('err5', true); return false; }
       err('err5', false);
     }
@@ -1697,7 +1688,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
   });
 
   // Enter в текстовых полях = дальше
-  ['a3','name','email'].forEach(function(id){
+  ['a3','name'].forEach(function(id){
     document.getElementById(id).addEventListener('keydown', function(e){
       if(e.key === 'Enter'){ e.preventDefault(); next.click(); }
     });
