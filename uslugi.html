@@ -79,6 +79,18 @@ h1,h2,h3,.serif{font-family:'PF',Georgia,serif;font-weight:500;line-height:1.16}
 .brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.3em;
        text-transform:uppercase;color:var(--gold);font-weight:600}
 .brand .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.top-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.bs{display:none}
+@media(max-width:560px){
+  .top{padding:16px 0 12px;gap:10px;align-items:center}
+  .bf{display:none}.bs{display:inline}
+  .top .brand{font-size:9.5px;letter-spacing:.12em;line-height:1.25}
+  .top-right{gap:10px;flex-wrap:nowrap;align-items:center}
+  .top a.back{font-size:11px;white-space:nowrap}
+  .top a.cta-s{font-size:11px;white-space:nowrap;padding-bottom:1px}
+}
+.top a.back{font-size:12.5px;letter-spacing:.04em;color:rgba(244,228,200,.62)}
+.top a.back:hover{color:var(--gold-l)}
 .top a.cta-s{font-size:13px;color:var(--cream);text-decoration:none;
              border-bottom:1px solid rgba(217,166,83,.5);padding-bottom:2px;white-space:nowrap}
 
@@ -354,7 +366,10 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 <div class="wrap">
   <div class="top">
     <div class="brand"><span class="dot"></span>Дарья Косилова</div>
-    <a class="cta-s" href="index.html">Пройти диагностику бесплатно</a>
+    <div class="top-right">
+      <a class="back" href="index.html"><span class="bf">← На главную</span><span class="bs">← Главная</span></a>
+      <a class="cta-s" href="index.html"><span class="bf">Пройти диагностику бесплатно</span><span class="bs">Диагностика</span></a>
+    </div>
   </div>
 
   <header class="hero">
