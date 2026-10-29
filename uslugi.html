@@ -183,9 +183,9 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
 .star{width:100%;height:auto;display:block;overflow:visible}
 .star .svg-name{font-family:'PF',Georgia,serif;font-size:24px;fill:#FFF8EA;font-weight:600}
 .star .svg-age{font-family:'MS',sans-serif;font-size:11.5px;letter-spacing:.06em;fill:rgba(243,229,206,.66)}
-.star .svg-mini{font-family:'MS',sans-serif;font-size:11.5px;letter-spacing:.16em;font-weight:700}
+.star .svg-mini{font-family:'MS',sans-serif;font-size:9.2px;letter-spacing:.12em;font-weight:700}
 .star .svg-num{font-family:'MS',sans-serif;font-size:10.5px;font-weight:700}
-.star .svg-rok{font-family:'MS',sans-serif;font-size:13.5px;letter-spacing:.18em;font-weight:700;fill:#FFB259}
+.star .svg-rok{font-family:'MS',sans-serif;font-size:11.5px;letter-spacing:.14em;font-weight:700;fill:#FFB259}
 .star .tri path{fill:rgba(217,166,83,.10);stroke:#E0B063;stroke-width:2.4;stroke-linejoin:round}
 .star .tri-in path{fill:rgba(243,229,206,.10);stroke:rgba(243,229,206,.82);stroke-width:1.9;stroke-linejoin:round}
 .star .spirit line{stroke:rgba(245,163,74,.42);stroke-width:11;stroke-linecap:round}
@@ -237,9 +237,9 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
   .star .svg-name{font-size:23px}
   .star .svg-age{display:none}
   .star .svg-name:not(:first-child){letter-spacing:-.01em}
-  .star .svg-mini{font-size:11px}
+  .star .svg-mini{font-size:10.5px}
   .star .svg-num{font-size:14px}
-  .star .svg-rok{font-size:15px}
+  .star .svg-rok{font-size:12.5px}
   .star .svg-rk-h{font-size:11px}
   .star .svg-rk{font-size:11px}
 }
@@ -274,6 +274,11 @@ details[open] summary:after{content:"–"}
 details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
 /* финал */
+.endsec{position:relative}
+.endsec:before{content:"";position:absolute;left:calc(50% - 50vw);width:100vw;top:-46px;bottom:-44px;
+  z-index:-1;pointer-events:none;background-image:linear-gradient(180deg,rgba(7,29,42,.66),rgba(7,29,42,.86));
+  background-image:linear-gradient(180deg,rgba(7,29,42,.66),rgba(7,29,42,.86)),var(--gor);
+  background-size:cover;background-position:center 44%;background-repeat:no-repeat}
 .final{margin:26px 0 0;padding:34px 26px;border-radius:22px;text-align:center;
   border:1px solid rgba(217,166,83,.45);background:linear-gradient(160deg,rgba(217,166,83,.14),rgba(4,22,29,.5))}
 .final h2{font-size:clamp(24px,4vw,34px);margin-bottom:10px}
@@ -778,6 +783,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
   </section>
 
   <!-- ФИНАЛ -->
+  <div class="endsec">
   <div class="final">
     <h2>Начни с бесплатного разбора</h2>
     <p>Три вопроса, три минуты — и у тебя на руках персональный разбор по той сфере,
@@ -794,6 +800,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
       <a href="privacy.html">Политика конфиденциальности</a>
       <a href="index.html">На главную</a>
     </div>
+  </div>
   </div>
 </div>
 
