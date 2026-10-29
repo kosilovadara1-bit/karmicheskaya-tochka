@@ -1567,6 +1567,24 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
+    // Web3Forms не отвечает на предварительный CORS-запрос (OPTIONS → 403),
+    // поэтому обычный JSON из браузера блокируется. Шлём формой:
+    // такой запрос «простой» и летит без preflight. Проверено на живом сайте.
+    function postForm(url, obj){
+      var body = new URLSearchParams();
+      for(var k in obj){ if(obj[k] !== undefined && obj[k] !== null) body.append(k, obj[k]); }
+      return fetch(url, {
+        method: 'POST',
+        body: body,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r){
+        return r.text().then(function(t){
+          var j = null; try{ j = JSON.parse(t); }catch(e){}
+          return !!j && (j.success === true || j.success === 'true');
+        });
+      }).catch(function(){ return false; });
+    }
+
     function postJSON(url, body){
       return fetch(url, {
         method: 'POST',
@@ -1585,7 +1603,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     // если ключа нет — работаем через FormSubmit.
     function sendLead(payload){
       var jobs = [];
-      if(WEB3_KEY) jobs.push(postJSON('https://api.web3forms.com/submit', {
+      if(WEB3_KEY) jobs.push(postForm('https://api.web3forms.com/submit', {
         access_key: WEB3_KEY,
         subject: payload._subject,
         from_name: 'Анкета «Твоя кармическая точка»',
