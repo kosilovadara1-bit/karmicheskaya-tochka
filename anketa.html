@@ -1165,6 +1165,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
 (function(){
   var SUBMIT_URL = "https://formsubmit.co/ajax/Dasha2806_94@mail.ru";
   var WEB3_KEY = "";
+  var NTFY_TOPIC = "tvk-zayavki-11d41a9c38b3";
   var TOTAL = 6, step = 1;
   var form = document.getElementById('form');
   var done = document.getElementById('done');
@@ -1592,6 +1593,26 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
         "Ответ 3": payload["Ответ 3"], "Строка для таблицы": payload["Строка для таблицы"]
       });
       if(SUBMIT_URL) jobs.push(postJSON(SUBMIT_URL, payload));
+      // третий канал — мгновенный push (ntfy): нужен, когда почтовый сервис лёг
+      if(NTFY_TOPIC) jobs.push(fetch('https://ntfy.sh/', {
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          topic: NTFY_TOPIC,
+          title: 'Новая заявка · ' + (payload["Имя"] || 'без имени'),
+          message: [
+            'Сфера: ' + payload["Сфера"],
+            'Ситуация: ' + payload["Ответ 2"],
+            'Хочу: ' + payload["Ответ 3"],
+            'Почта: ' + payload["Email"],
+            'Строка для таблицы: ' + payload["Строка для таблицы"]
+          ].join('\n'),
+          tags: ['sparkles'],
+          priority: 4
+        })
+      }).then(function(r){ return r.ok; }).catch(function(){ return false; }));
+
       if(!jobs.length) return Promise.resolve(false);
       return Promise.all(jobs).then(function(res){
         for(var i = 0; i < res.length; i++){ if(res[i]) return true; }
