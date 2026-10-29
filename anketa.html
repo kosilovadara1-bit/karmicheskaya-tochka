@@ -176,6 +176,12 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
 .done h1{margin-bottom:12px}
 .done p{color:rgba(255,253,248,.75);font-size:15px;max-width:46ch;margin:0 auto 10px}
 .done .tools{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
+.send-fail{margin:22px auto 0;max-width:560px;padding:14px 16px;border:1px solid rgba(245,163,74,.45);
+  border-radius:12px;background:rgba(245,163,74,.08);color:rgba(244,228,200,.92);font-size:13.5px;line-height:1.5;text-align:center}
+.send-fail b{color:#F4E4C8}
+.send-copy{display:inline-block;margin-top:8px;padding:6px 12px;border-radius:8px;cursor:pointer;
+  border:1px solid rgba(244,228,200,.35);background:transparent;color:#F4E4C8;font:inherit;font-size:12.5px}
+.send-copy:hover{border-color:#D9A653;color:#F5A34A}
 /* ---------- феникс ---------- */
 .phx{position:fixed;right:clamp(-70px,-4vw,-18px);top:clamp(40px,7vh,120px);
      width:clamp(260px,27vw,430px);aspect-ratio:720/476;opacity:.14;pointer-events:none;z-index:0;
@@ -394,6 +400,11 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
       <a class="btn btn-ghost" id="tgBtn" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Telegram</a>
       <a class="btn btn-ghost" id="maxBtn" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener" >MAX</a>
       <a class="btn btn-ghost" id="vkBtn" href="https://vk.ru/kosilova94" target="_blank" rel="noopener">ВКонтакте</a>
+    </div>
+    <div class="send-fail" id="sendFail" hidden>
+      <b>Дублируйте заявку в один клик.</b> Автоматическая отправка сейчас недоступна —
+      нажмите кнопку ниже, откроется Telegram с уже готовым сообщением: останется нажать «Отправить».
+      <button type="button" class="send-copy" id="sendCopy">Скопировать ответы</button>
     </div>
     <div class="dl-note" id="dlNote" hidden>
       <b>Разбор скачан.</b> Ищи файл в «Файлах» или «Загрузках» — можно распечатать или читать с экрана.
@@ -1153,6 +1164,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
 <script>
 (function(){
   var SUBMIT_URL = "https://formsubmit.co/ajax/Dasha2806_94@mail.ru";
+  var WEB3_KEY = "";
   var TOTAL = 6, step = 1;
   var form = document.getElementById('form');
   var done = document.getElementById('done');
@@ -1533,30 +1545,73 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
                     "Имя": data.name, "Email": data.email,
                     "Согласие": "да", "Строка для таблицы": csvLine() };
 
+    var leadText = '';
     function finish(ok){
       form.style.display = 'none';
       done.classList.add('on');
       prebuildPdf();
       var txt = 'Разбор: ' + data.sphere + '\nСитуация: ' + data.a2 + '\nХочу: ' + data.a3 + '\nИмя: ' + data.name + '\nПочта: ' + data.email;
-      document.getElementById('tgBtn').href = ok ? "https://t.me/DaryaKosilova"
-        : "https://t.me/DaryaKosilova" + "?text=" + encodeURIComponent(txt);
+      leadText = txt;
+      var tg = document.getElementById('tgBtn');
+      tg.href = ok ? "https://t.me/DaryaKosilova" : ("https://t.me/DaryaKosilova" + "?text=" + encodeURIComponent(txt));
+      if(!ok){
+        tg.className = 'btn btn-gold';
+        tg.textContent = 'Отправить заявку в Telegram';
+        var box = document.getElementById('sendFail');
+        if(box) box.hidden = false;
+        try{ if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt); }catch(e){}
+      }
       try{ localStorage.removeItem(KEY); }catch(e){}
       window.scrollTo({top:0,behavior:'smooth'});
     }
 
-    if(!SUBMIT_URL){ finish(false); return; }
-    fetch(SUBMIT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).then(function(r){
-      // FormSubmit отвечает 200 даже когда форма НЕ доставлена (не активирована) —
-      // поэтому смотрим на поле success в теле ответа, а не на HTTP-код.
-      return r.json().catch(function(){ return { success: r.ok }; });
-    }).then(function(j){
-      var ok = !!j && (j.success === true || j.success === 'true');
-      finish(ok);
-    }).catch(function(){ finish(false); });
+    function postJSON(url, body){
+      return fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      }).then(function(r){
+        return r.text().then(function(t){
+          var j = null; try{ j = JSON.parse(t); }catch(e){}
+          return !!j && (j.success === true || j.success === 'true');
+        });
+      }).catch(function(){ return false; });
+    }
+
+    // два независимых канала: FormSubmit + Web3Forms (если вписан ключ).
+    // заявка считается доставленной, если ответил хотя бы один.
+    function sendLead(payload){
+      var jobs = [];
+      if(SUBMIT_URL) jobs.push(postJSON(SUBMIT_URL, payload));
+      if(WEB3_KEY) jobs.push(postJSON('https://api.web3forms.com/submit', {
+        access_key: WEB3_KEY,
+        subject: payload._subject,
+        from_name: 'Анкета «Твоя кармическая точка»',
+        "Имя": payload["Имя"], "Email": payload["Email"],
+        "Сфера": payload["Сфера"], "Ответ 2": payload["Ответ 2"],
+        "Ответ 3": payload["Ответ 3"], "Строка для таблицы": payload["Строка для таблицы"]
+      }));
+      if(!jobs.length) return Promise.resolve(false);
+      return Promise.all(jobs).then(function(res){
+        for(var i = 0; i < res.length; i++){ if(res[i]) return true; }
+        return false;
+      });
+    }
+
+    var sendCopyBtn = document.getElementById('sendCopy');
+    if(sendCopyBtn){ sendCopyBtn.addEventListener('click', function(){
+      try{
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(leadText).then(function(){
+            sendCopyBtn.textContent = 'Скопировано ✓';
+            setTimeout(function(){ sendCopyBtn.textContent = 'Скопировать ответы'; }, 1800);
+          });
+        }
+      }catch(e){}
+    }); }
+
+    if(!SUBMIT_URL && !WEB3_KEY){ finish(false); return; }
+    sendLead(payload).then(finish, function(){ finish(false); });
   });
 
   // Enter в текстовых полях = дальше
