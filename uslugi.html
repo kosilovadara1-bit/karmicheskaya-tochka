@@ -183,9 +183,9 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
 .star{width:100%;height:auto;display:block;overflow:visible}
 .star .svg-name{font-family:'PF',Georgia,serif;font-size:24px;fill:#FFF8EA;font-weight:600}
 .star .svg-age{font-family:'MS',sans-serif;font-size:11.5px;letter-spacing:.06em;fill:rgba(243,229,206,.66)}
-.star .svg-mini{font-family:'MS',sans-serif;font-size:9.2px;letter-spacing:.12em;font-weight:700}
+.star .svg-mini{font-family:'MS',sans-serif;font-size:8.8px;letter-spacing:.1em;font-weight:700}
 .star .svg-num{font-family:'MS',sans-serif;font-size:10.5px;font-weight:700}
-.star .svg-rok{font-family:'MS',sans-serif;font-size:11.5px;letter-spacing:.14em;font-weight:700;fill:#FFB259}
+.star .svg-rok{font-family:'MS',sans-serif;font-size:10.8px;letter-spacing:.12em;font-weight:700;fill:#FFB259}
 .star .tri path{fill:rgba(217,166,83,.10);stroke:#E0B063;stroke-width:2.4;stroke-linejoin:round}
 .star .tri-in path{fill:rgba(243,229,206,.10);stroke:rgba(243,229,206,.82);stroke-width:1.9;stroke-linejoin:round}
 .star .spirit line{stroke:rgba(245,163,74,.42);stroke-width:11;stroke-linecap:round}
@@ -193,6 +193,17 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
 .star .svg-rk{font-family:'MS',sans-serif;font-size:12px;fill:rgba(243,229,206,.96)}
 .star .alt line{stroke:rgba(243,229,206,.72);stroke-width:1.5;stroke-dasharray:5 5;stroke-linecap:round}
 .star .alt circle{fill:#F0C079;stroke:none}
+.star .rkn circle{fill:#08242E;stroke:#E0B063;stroke-width:1.8}
+.star .rkn text{font-family:'MS',sans-serif;font-size:16px;font-weight:700;fill:#F5C77A}
+.rk-keys{display:flex;flex-wrap:wrap;gap:8px 10px;justify-content:center;margin:14px auto 4px;max-width:880px}
+.rk-keys span{display:inline-flex;align-items:center;gap:7px;padding:6px 13px 6px 8px;border-radius:999px;
+  border:1px solid rgba(214,160,77,.34);background:rgba(8,42,52,.55);
+  font-family:'MS',sans-serif;font-size:12.5px;color:rgba(243,229,206,.9);white-space:nowrap}
+.rk-keys b{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;
+  border:1px solid rgba(224,176,99,.75);color:#F5C77A;font-size:10.5px;font-weight:700;flex:0 0 auto}
+@media(max-width:560px){.rk-keys{gap:6px;padding:0 2px}.rk-keys span{font-size:10.8px;padding:5px 8px 5px 5px;gap:5px}
+  .rk-keys b{width:16px;height:16px;font-size:9.5px}
+  .star .rkn text{font-size:19px}.star .rkn circle{stroke-width:2.2}}
 .svg-m{display:none}
 .star-zoom{display:none;align-items:center;gap:8px;margin:6px auto 2px;padding:10px 18px;border-radius:999px;
   border:1px solid rgba(214,160,77,.5);background:rgba(214,160,77,.08);color:var(--gold-l);
@@ -253,9 +264,9 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
   .star{width:100%;max-width:100%;height:auto}
   .star .svg-age{display:none}
   .star .svg-name{font-size:23.5px;letter-spacing:-.03em}
-  .star .svg-mini{font-size:16.5px;letter-spacing:.04em}
+  .star .svg-mini{font-size:13.6px;letter-spacing:.03em}
   .star .svg-num{font-size:15px}
-  .star .svg-rok{font-size:19px;letter-spacing:.08em}
+  .star .svg-rok{font-size:15.8px;letter-spacing:.06em}
   .star .svg-rk-h{font-size:16px;letter-spacing:.09em}
   /* тёмный контур под буквами: подписи читаются поверх золотых линий */
   .star .svg-name,.star .svg-mini,.star .svg-rok,.star .svg-rk-h{
@@ -363,6 +374,209 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 </div>
 
 <div class="wrap">
+
+  <!-- МЕТОД -->
+  <section id="metod">
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4"/></svg>Метод</div>
+    <h2 class="sec">Что такое «Кармическая звезда»</h2>
+    <p class="lead">Нумерология изучает связь чисел и явлений: почему одни и те же цифры встречаются рядом,
+       как на нас влияет номер дома или квартиры, почему события приходят именно в эти даты.
+       Но главный числовой код человека — <b>дата рождения</b>. В ней зашиты характер, таланты,
+       кармические задачи и миссия этого воплощения.</p>
+    <p class="lead"><b>Карма</b> — это не наказание и не «судьба». Это след: то, что ты уже сделала,
+       и то, что тебе возвращается тем же поступком. Проще говоря — привычка, которая повторяется,
+       пока её не увидят. Карма показывает, где ты ходишь по кругу.</p>
+    <p class="lead"><b>Дхарма</b> — вторая половина того же закона. Это твоё действие «по назначению»:
+       то, что ты делаешь из своей силы, а не из страха. Там, где карма объясняет, почему повторяется,
+       дхарма показывает, чем это заменить. Одно без другого не работает: увидеть ошибку и не дать
+       себе нового действия — значит вернуться в тот же круг.</p>
+    <p class="lead">Кармическая нумерология читает этот след по дате рождения: где карма держит,
+       а где открыта дхарма — и какое конкретное действие их разделяет.</p>
+    <p class="lead">«Кармическая звезда» — способ увидеть всё это сразу. Пять треугольников — Личность,
+       Духовность, Реализация, Отношения, Здоровье — и шестая сфера: Высшая миссия души.
+       В каждом треугольнике три вершины, и они связаны в одну цепочку.</p>
+
+    <div class="chain">
+      <div class="step">
+        <div class="n">01</div>
+        <b>Главная ошибка</b>
+        <p>Нижняя вершина треугольника. Это место, куда ты проваливаешься раньше, чем успеваешь подумать:
+           страх, привычка, сценарий прошлого воплощения или программа рода. Пока она действует,
+           сфера жизни ходит по одному и тому же кругу.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <b>Линия духа</b>
+        <p>Мост между ошибкой и предназначением. Это качество и то внутреннее действие, которым
+           ошибка проходится. Не «взять себя в руки» и не «стараться сильнее», а конкретный рычаг,
+           которым энергию достают из минуса.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <b>Предназначение</b>
+        <p>Верхняя вершина. То, как сфера выглядит, когда ошибка пройдена. Само оно не включается:
+           сначала идёт работа через линию духа — и только потом приходит результат.</p>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:22px"><b>Если перепрыгнуть линию духа</b> и сразу тянуться к предназначению,
+       энергия скатится обратно в ошибку — удержать высоту не на чем, внутренней опоры ещё нет.
+       Поэтому порядок именно такой: увидеть ошибку → пройти её через линию духа → открыть предназначение.</p>
+  </section>
+
+  <!-- СХЕМА -->
+  <section id="shema">
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3zM12 10v5M9.5 20h5"/></svg>Схема</div>
+    <h2 class="sec">Как она устроена</h2>
+    <p class="lead">Пять лучей — пять сфер. Внутри, на вершинах основания, — родовые программы.
+       Внизу по центру — роковая ошибка. В середине — высшая миссия души.</p>
+
+    <div class="star-wrap">
+      <svg class="star" viewBox="0 0 900 760" role="img" aria-label="Схема кармической звезды: пять треугольников с линиями духа, родовые ошибки, роковая ошибка, высшая миссия души">
+        <defs>
+          <radialGradient id="glowC" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#F5A34A" stop-opacity=".22"/>
+            <stop offset="100%" stop-color="#F5A34A" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#F5C77A"/>
+            <stop offset="100%" stop-color="#D9A653"/>
+          </linearGradient>
+        </defs>
+
+        <circle cx="450" cy="360" r="330" fill="none" stroke="rgba(217,166,83,.16)" stroke-width="1"/>
+        <circle cx="450" cy="360" r="356" fill="none" stroke="rgba(217,166,83,.08)" stroke-width="1"/>
+        <circle cx="450" cy="360" r="150" fill="url(#glowC)"/>
+
+        <g class="tri">
+          <path d="M450 60 L517.4 267.3 L382.6 267.3 Z"/>
+          <path d="M735.3 267.3 L559 395.4 L517.4 267.3 Z"/>
+          <path d="M626.3 602.7 L450 474.6 L559 395.4 Z"/>
+          <path d="M273.7 602.7 L341 395.4 L450 474.6 Z"/>
+          <path d="M164.7 267.3 L382.6 267.3 L341 395.4 Z"/>
+        </g>
+
+        <g class="tri-in">
+          <path d="M483.7 163.6 L416.3 163.6 L450 267.3 Z"/>
+          <path d="M647.1 331.3 L626.3 267.3 L538.2 331.3 Z"/>
+          <path d="M538.1 538.6 L592.6 499 L504.5 435 Z"/>
+          <path d="M307.4 499 L361.9 538.6 L395.5 435 Z"/>
+          <path d="M273.6 267.3 L252.9 331.3 L361.8 331.3 Z"/>
+        </g>
+
+        <!-- высоты: из каждого предназначения вниз, к середине основания под прямым углом -->
+        <g class="alt">
+          <line x1="450" y1="60" x2="450" y2="267.3"/>
+          <line x1="735.3" y1="267.3" x2="538.2" y2="331.35"/>
+          <line x1="626.3" y1="602.7" x2="504.5" y2="435"/>
+          <line x1="273.7" y1="602.7" x2="395.5" y2="435"/>
+          <line x1="164.7" y1="267.3" x2="361.8" y2="331.35"/>
+          <circle cx="450" cy="267.3" r="3.4"/>
+          <circle cx="538.2" cy="331.35" r="3.4"/>
+          <circle cx="504.5" cy="435" r="3.4"/>
+          <circle cx="395.5" cy="435" r="3.4"/>
+          <circle cx="361.8" cy="331.35" r="3.4"/>
+        </g>
+
+        <path d="M517.4 267.3 L559 395.4 L450 474.6 L341 395.4 L382.6 267.3 Z"
+              fill="rgba(244,228,200,.05)" stroke="rgba(244,228,200,.30)" stroke-width="4"
+              stroke-linejoin="round" stroke-linecap="round"/>
+
+        <g class="spirit">
+          <line x1="382.6" y1="267.3" x2="517.4" y2="267.3"/>
+          <line x1="517.4" y1="267.3" x2="559" y2="395.4"/>
+          <line x1="559" y1="395.4" x2="450" y2="474.6"/>
+          <line x1="450" y1="474.6" x2="341" y2="395.4"/>
+          <line x1="341" y1="395.4" x2="382.6" y2="267.3"/>
+        </g>
+        <path d="M517.4 267.3 L559 395.4 L450 474.6 L341 395.4 L382.6 267.3 Z"
+              fill="none" stroke="url(#goldStroke)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <g>
+          <circle cx="382.6" cy="267.3" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
+          <g class="rkn"><circle cx="348.6" cy="243.3" r="13.5"/><text x="348.6" y="248.70000000000002" text-anchor="middle">1</text></g>
+        </g>
+        <g>
+          <circle cx="517.4" cy="267.3" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
+          <g class="rkn"><circle cx="551.4" cy="243.3" r="13.5"/><text x="551.4" y="248.70000000000002" text-anchor="middle">2</text></g>
+        </g>
+        <g>
+          <circle cx="559" cy="395.4" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
+          <g class="rkn"><circle cx="599.0" cy="401.0" r="13.5"/><text x="599.0" y="406.4" text-anchor="middle">3</text></g>
+        </g>
+        <g>
+          <circle cx="341" cy="395.4" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
+          <g class="rkn"><circle cx="301.0" cy="401.0" r="13.5"/><text x="301.0" y="406.4" text-anchor="middle">4</text></g>
+        </g>
+
+        <circle cx="450" cy="474.6" r="15" fill="none" stroke="rgba(245,163,74,.45)" stroke-width="1.2"/>
+        <circle cx="450" cy="474.6" r="8" fill="#F5A34A"/>
+        <line x1="450" y1="492" x2="450" y2="524" stroke="rgba(245,163,74,.55)" stroke-width="1"/>
+        <text x="450" y="546" text-anchor="middle" class="svg-rok">РОКОВАЯ ОШИБКА</text>
+
+        <circle cx="450" cy="360" r="6.5" fill="#FBF3E4"/>
+        <circle cx="450" cy="360" r="13" fill="none" stroke="rgba(251,243,228,.42)" stroke-width="1"/>
+        <text x="450" y="336" text-anchor="middle" class="svg-mini svg-d" fill="rgba(244,228,200,.9)">ВЫСШАЯ МИССИЯ ДУШИ</text>
+        <text x="450" y="320" text-anchor="middle" class="svg-mini svg-m" fill="rgba(244,228,200,.9)">ВЫСШАЯ МИССИЯ</text>
+        <text x="450" y="340" text-anchor="middle" class="svg-mini svg-m" fill="rgba(244,228,200,.9)">ДУШИ</text>
+
+        <g class="lbl">
+          <text x="450" y="30" text-anchor="middle" class="svg-name">Духовность</text>
+          <text x="450" y="49" text-anchor="middle" class="svg-age">треугольник 02 · 25–35 лет</text>
+          <text x="752" y="258" text-anchor="start" class="svg-name">Реализация</text>
+          <text x="752" y="278" text-anchor="start" class="svg-age">треугольник 03 · к 35 годам</text>
+          <text x="642" y="642" text-anchor="start" class="svg-name">Отношения</text>
+          <text x="642" y="662" text-anchor="start" class="svg-age">треугольник 04 · после 35</text>
+          <text x="258" y="642" text-anchor="end" class="svg-name">Здоровье</text>
+          <text x="258" y="662" text-anchor="end" class="svg-age">треугольник 05 · после 35</text>
+          <text x="148" y="258" text-anchor="end" class="svg-name">Личность</text>
+          <text x="148" y="278" text-anchor="end" class="svg-age">треугольник 01 · до 25 лет</text>
+        </g>
+      </svg>
+    </div>
+    <div class="rk-keys">
+      <span><b>1</b>отец · мужская линия</span>
+      <span><b>2</b>мать · мужская линия</span>
+      <span><b>3</b>отец · женская линия</span>
+      <span><b>4</b>мать · женская линия</span>
+    </div>
+    <button type="button" class="star-zoom" id="starZoomBtn">Рассмотреть схему крупнее</button>
+
+    <div class="legend">
+      <div class="lg">
+        <div class="lg-t">Лучи звезды — пять сфер</div>
+        <p>Каждый луч — это треугольник: вверху предназначение, внизу главная ошибка, между ними
+           линия духа. Внутри каждого луча есть свой перевёрнутый треугольник — опыт прошлого
+           воплощения. Шестая сфера, высшая миссия души, стоит в центре: она собирается из пяти
+           предыдущих и не назначается волевым решением.</p>
+      </div>
+      <div class="lg">
+        <div class="lg-t">Родовые ошибки · четыре вершины</div>
+        <p>Четыре вершины основания подписаны по линиям рода: <b>отец · мужская линия</b>,
+           <b>мать · мужская линия</b>, <b>отец · женская линия</b>, <b>мать · женская линия</b>.
+           Это то, что передаётся в роду. Не приговор — то, что можно увидеть и перестать повторять.</p>
+      </div>
+      <div class="lg">
+        <div class="lg-t">Роковая ошибка</div>
+        <p>Внизу по центру, между четвёртым и пятым предназначениями. Самая глубокая личная ошибка
+           прошлого воплощения и главный урок этой жизни. Пока она активна, остальные сферы тоже
+           будут спотыкаться — поэтому её разбирают отдельно.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kak">
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 1-12 5-14 12l-1 4 4-1C16 17 19 12 20 4zM5 19l8-8"/></svg>Как всё проходит</div>
+    <h2 class="sec">Три шага, без лабиринта</h2>
+    <ol class="steps">
+      <li><b>Бесплатная диагностика.</b> Три вопроса — 3 минуты. Сразу получаешь персональный разбор
+          по одной сфере и три шага на неделю. Ничего покупать не нужно.</li>
+      <li><b>Экспресс или встреча.</b> Если пока есть только один вопрос — экспресс-разбор голосом.
+          Если хочешь увидеть всю карту — личная встреча на два часа, где звезда собирается при тебе.</li>
+      <li><b>Работа.</b> Дальше — сопровождение по одной сфере или малый круг из шести человек.
+          Через три месяца — сверка: что сдвинулось, что дальше.</li>
+    </ol>
+  </section>
 
   <!-- УСЛУГИ -->
   <section id="uslugi">
@@ -484,194 +698,6 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
   </section>
 
-  <!-- МЕТОД -->
-  <section id="metod">
-    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4"/></svg>Метод</div>
-    <h2 class="sec">Что такое «Кармическая звезда»</h2>
-    <p class="lead">Нумерология изучает связь чисел и явлений: почему одни и те же цифры встречаются рядом,
-       как на нас влияет номер дома или квартиры, почему события приходят именно в эти даты.
-       Но главный числовой код человека — <b>дата рождения</b>. В ней зашиты характер, таланты,
-       кармические задачи и миссия этого воплощения.</p>
-    <p class="lead"><b>Карма</b> — это не наказание и не «судьба». Это след: то, что ты уже сделала,
-       и то, что тебе возвращается тем же поступком. Проще говоря — привычка, которая повторяется,
-       пока её не увидят. Карма показывает, где ты ходишь по кругу.</p>
-    <p class="lead"><b>Дхарма</b> — вторая половина того же закона. Это твоё действие «по назначению»:
-       то, что ты делаешь из своей силы, а не из страха. Там, где карма объясняет, почему повторяется,
-       дхарма показывает, чем это заменить. Одно без другого не работает: увидеть ошибку и не дать
-       себе нового действия — значит вернуться в тот же круг.</p>
-    <p class="lead">Кармическая нумерология читает этот след по дате рождения: где карма держит,
-       а где открыта дхарма — и какое конкретное действие их разделяет.</p>
-    <p class="lead">«Кармическая звезда» — способ увидеть всё это сразу. Пять треугольников — Личность,
-       Духовность, Реализация, Отношения, Здоровье — и шестая сфера: Высшая миссия души.
-       В каждом треугольнике три вершины, и они связаны в одну цепочку.</p>
-
-    <div class="chain">
-      <div class="step">
-        <div class="n">01</div>
-        <b>Главная ошибка</b>
-        <p>Нижняя вершина треугольника. Это место, куда ты проваливаешься раньше, чем успеваешь подумать:
-           страх, привычка, сценарий прошлого воплощения или программа рода. Пока она действует,
-           сфера жизни ходит по одному и тому же кругу.</p>
-      </div>
-      <div class="step">
-        <div class="n">02</div>
-        <b>Линия духа</b>
-        <p>Мост между ошибкой и предназначением. Это качество и то внутреннее действие, которым
-           ошибка проходится. Не «взять себя в руки» и не «стараться сильнее», а конкретный рычаг,
-           которым энергию достают из минуса.</p>
-      </div>
-      <div class="step">
-        <div class="n">03</div>
-        <b>Предназначение</b>
-        <p>Верхняя вершина. То, как сфера выглядит, когда ошибка пройдена. Само оно не включается:
-           сначала идёт работа через линию духа — и только потом приходит результат.</p>
-      </div>
-    </div>
-
-    <p class="lead" style="margin-top:22px"><b>Если перепрыгнуть линию духа</b> и сразу тянуться к предназначению,
-       энергия скатится обратно в ошибку — удержать высоту не на чем, внутренней опоры ещё нет.
-       Поэтому порядок именно такой: увидеть ошибку → пройти её через линию духа → открыть предназначение.</p>
-  </section>
-
-  <!-- СХЕМА -->
-  <section id="shema">
-    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 17H3zM12 10v5M9.5 20h5"/></svg>Схема</div>
-    <h2 class="sec">Как она устроена</h2>
-    <p class="lead">Пять лучей — пять сфер. Внутри, на вершинах основания, — родовые программы.
-       Внизу по центру — роковая ошибка. В середине — высшая миссия души.</p>
-
-    <div class="star-wrap">
-      <svg class="star" viewBox="0 0 900 760" role="img" aria-label="Схема кармической звезды: пять треугольников с линиями духа, родовые ошибки, роковая ошибка, высшая миссия души">
-        <defs>
-          <radialGradient id="glowC" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#F5A34A" stop-opacity=".22"/>
-            <stop offset="100%" stop-color="#F5A34A" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#F5C77A"/>
-            <stop offset="100%" stop-color="#D9A653"/>
-          </linearGradient>
-        </defs>
-
-        <circle cx="450" cy="360" r="330" fill="none" stroke="rgba(217,166,83,.16)" stroke-width="1"/>
-        <circle cx="450" cy="360" r="356" fill="none" stroke="rgba(217,166,83,.08)" stroke-width="1"/>
-        <circle cx="450" cy="360" r="150" fill="url(#glowC)"/>
-
-        <g class="tri">
-          <path d="M450 60 L517.4 267.3 L382.6 267.3 Z"/>
-          <path d="M735.3 267.3 L559 395.4 L517.4 267.3 Z"/>
-          <path d="M626.3 602.7 L450 474.6 L559 395.4 Z"/>
-          <path d="M273.7 602.7 L341 395.4 L450 474.6 Z"/>
-          <path d="M164.7 267.3 L382.6 267.3 L341 395.4 Z"/>
-        </g>
-
-        <g class="tri-in">
-          <path d="M483.7 163.6 L416.3 163.6 L450 267.3 Z"/>
-          <path d="M647.1 331.3 L626.3 267.3 L538.2 331.3 Z"/>
-          <path d="M538.1 538.6 L592.6 499 L504.5 435 Z"/>
-          <path d="M307.4 499 L361.9 538.6 L395.5 435 Z"/>
-          <path d="M273.6 267.3 L252.9 331.3 L361.8 331.3 Z"/>
-        </g>
-
-        <!-- высоты: из каждого предназначения вниз, к середине основания под прямым углом -->
-        <g class="alt">
-          <line x1="450" y1="60" x2="450" y2="267.3"/>
-          <line x1="735.3" y1="267.3" x2="538.2" y2="331.35"/>
-          <line x1="626.3" y1="602.7" x2="504.5" y2="435"/>
-          <line x1="273.7" y1="602.7" x2="395.5" y2="435"/>
-          <line x1="164.7" y1="267.3" x2="361.8" y2="331.35"/>
-          <circle cx="450" cy="267.3" r="3.4"/>
-          <circle cx="538.2" cy="331.35" r="3.4"/>
-          <circle cx="504.5" cy="435" r="3.4"/>
-          <circle cx="395.5" cy="435" r="3.4"/>
-          <circle cx="361.8" cy="331.35" r="3.4"/>
-        </g>
-
-        <path d="M517.4 267.3 L559 395.4 L450 474.6 L341 395.4 L382.6 267.3 Z"
-              fill="rgba(244,228,200,.05)" stroke="rgba(244,228,200,.30)" stroke-width="4"
-              stroke-linejoin="round" stroke-linecap="round"/>
-
-        <g class="spirit">
-          <line x1="382.6" y1="267.3" x2="517.4" y2="267.3"/>
-          <line x1="517.4" y1="267.3" x2="559" y2="395.4"/>
-          <line x1="559" y1="395.4" x2="450" y2="474.6"/>
-          <line x1="450" y1="474.6" x2="341" y2="395.4"/>
-          <line x1="341" y1="395.4" x2="382.6" y2="267.3"/>
-        </g>
-        <path d="M517.4 267.3 L559 395.4 L450 474.6 L341 395.4 L382.6 267.3 Z"
-              fill="none" stroke="url(#goldStroke)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
-
-        <g>
-          <circle cx="382.6" cy="267.3" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
-          <text x="366" y="240" text-anchor="end" class="svg-rk-h">ОТЕЦ</text>
-          <text x="366" y="255" text-anchor="end" class="svg-rk">мужская линия</text>
-        </g>
-        <g>
-          <circle cx="517.4" cy="267.3" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
-          <text x="534" y="240" text-anchor="start" class="svg-rk-h">МАТЬ</text>
-          <text x="534" y="255" text-anchor="start" class="svg-rk">мужская линия</text>
-        </g>
-        <g>
-          <circle cx="559" cy="395.4" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
-          <text x="576" y="401" text-anchor="start" class="svg-rk-h">ОТЕЦ</text>
-          <text x="576" y="416" text-anchor="start" class="svg-rk">женская линия</text>
-        </g>
-        <g>
-          <circle cx="341" cy="395.4" r="6" fill="#04202A" stroke="#D9A653" stroke-width="2.2"/>
-          <text x="324" y="401" text-anchor="end" class="svg-rk-h">МАТЬ</text>
-          <text x="324" y="416" text-anchor="end" class="svg-rk">женская линия</text>
-        </g>
-
-        <circle cx="450" cy="474.6" r="15" fill="none" stroke="rgba(245,163,74,.45)" stroke-width="1.2"/>
-        <circle cx="450" cy="474.6" r="8" fill="#F5A34A"/>
-        <line x1="450" y1="492" x2="450" y2="524" stroke="rgba(245,163,74,.55)" stroke-width="1"/>
-        <text x="450" y="546" text-anchor="middle" class="svg-rok">РОКОВАЯ ОШИБКА</text>
-
-        <circle cx="450" cy="360" r="6.5" fill="#FBF3E4"/>
-        <circle cx="450" cy="360" r="13" fill="none" stroke="rgba(251,243,228,.42)" stroke-width="1"/>
-        <text x="450" y="336" text-anchor="middle" class="svg-mini svg-d" fill="rgba(244,228,200,.9)">ВЫСШАЯ МИССИЯ ДУШИ</text>
-        <text x="450" y="320" text-anchor="middle" class="svg-mini svg-m" fill="rgba(244,228,200,.9)">ВЫСШАЯ МИССИЯ</text>
-        <text x="450" y="340" text-anchor="middle" class="svg-mini svg-m" fill="rgba(244,228,200,.9)">ДУШИ</text>
-
-        <g class="lbl">
-          <text x="450" y="30" text-anchor="middle" class="svg-name">Духовность</text>
-          <text x="450" y="49" text-anchor="middle" class="svg-age">треугольник 02 · 25–35 лет</text>
-          <text x="752" y="258" text-anchor="start" class="svg-name">Реализация</text>
-          <text x="752" y="278" text-anchor="start" class="svg-age">треугольник 03 · к 35 годам</text>
-          <text x="642" y="642" text-anchor="start" class="svg-name">Отношения</text>
-          <text x="642" y="662" text-anchor="start" class="svg-age">треугольник 04 · после 35</text>
-          <text x="258" y="642" text-anchor="end" class="svg-name">Здоровье</text>
-          <text x="258" y="662" text-anchor="end" class="svg-age">треугольник 05 · после 35</text>
-          <text x="148" y="258" text-anchor="end" class="svg-name">Личность</text>
-          <text x="148" y="278" text-anchor="end" class="svg-age">треугольник 01 · до 25 лет</text>
-        </g>
-      </svg>
-    </div>
-    <button type="button" class="star-zoom" id="starZoomBtn">Рассмотреть схему крупнее</button>
-
-    <div class="legend">
-      <div class="lg">
-        <div class="lg-t">Лучи звезды — пять сфер</div>
-        <p>Каждый луч — это треугольник: вверху предназначение, внизу главная ошибка, между ними
-           линия духа. Внутри каждого луча есть свой перевёрнутый треугольник — опыт прошлого
-           воплощения. Шестая сфера, высшая миссия души, стоит в центре: она собирается из пяти
-           предыдущих и не назначается волевым решением.</p>
-      </div>
-      <div class="lg">
-        <div class="lg-t">Родовые ошибки · четыре вершины</div>
-        <p>Четыре вершины основания подписаны по линиям рода: <b>отец · мужская линия</b>,
-           <b>мать · мужская линия</b>, <b>отец · женская линия</b>, <b>мать · женская линия</b>.
-           Это то, что передаётся в роду. Не приговор — то, что можно увидеть и перестать повторять.</p>
-      </div>
-      <div class="lg">
-        <div class="lg-t">Роковая ошибка</div>
-        <p>Внизу по центру, между четвёртым и пятым предназначениями. Самая глубокая личная ошибка
-           прошлого воплощения и главный урок этой жизни. Пока она активна, остальные сферы тоже
-           будут спотыкаться — поэтому её разбирают отдельно.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ПОДРОБНО -->
   <section id="podrobno">
     <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2 2 4 4 0 1 1-4-4 7 7 0 1 1 7 7 10 10 0 1 1-10-10"/></svg>Подробно</div>
@@ -756,21 +782,6 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
       </div>
     </details>
   </section>
-
-  <section id="kak">
-    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-7 1-12 5-14 12l-1 4 4-1C16 17 19 12 20 4zM5 19l8-8"/></svg>Как всё проходит</div>
-    <h2 class="sec">Три шага, без лабиринта</h2>
-    <ol class="steps">
-      <li><b>Бесплатная диагностика.</b> Три вопроса — 3 минуты. Сразу получаешь персональный разбор
-          по одной сфере и три шага на неделю. Ничего покупать не нужно.</li>
-      <li><b>Экспресс или встреча.</b> Если пока есть только один вопрос — экспресс-разбор голосом.
-          Если хочешь увидеть всю карту — личная встреча на два часа, где звезда собирается при тебе.</li>
-      <li><b>Работа.</b> Дальше — сопровождение по одной сфере или малый круг из шести человек.
-          Через три месяца — сверка: что сдвинулось, что дальше.</li>
-    </ol>
-  </section>
-
-
 
   <!-- FAQ -->
   <section id="faq">
