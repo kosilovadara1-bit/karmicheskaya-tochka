@@ -1544,8 +1544,10 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     if(!html){ return; }
     var url = '';
     try{ url = URL.createObjectURL(new Blob([previewHtml(html)], {type: 'text/html;charset=utf-8'})); }catch(e){}
+    // на телефоне новая вкладка с blob часто не открывается — сразу показываем окно
+    var mobile = (window.matchMedia && window.matchMedia('(pointer:coarse)').matches) || window.innerWidth < 900;
     var w = null;
-    if(url){ try{ w = window.open(url, '_blank'); }catch(e){ w = null; } }
+    if(!mobile && url){ try{ w = window.open(url, '_blank'); }catch(e){ w = null; } }
     if(w){ try{ w.focus(); }catch(e){} return; }
     var m = document.getElementById('reportModal');
     document.getElementById('rmOpen').href = pdfUrl || url || '#';
