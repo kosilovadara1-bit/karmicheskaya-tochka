@@ -1165,7 +1165,8 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
 (function(){
   var SUBMIT_URL = "https://formsubmit.co/ajax/Dasha2806_94@mail.ru";
   var WEB3_KEY = "";
-  var NTFY_TOPIC = "tvk-zayavki-11d41a9c38b3";
+  var NTFY_TOPIC = "";
+  try{ NTFY_TOPIC = atob("dHZrLXpheWF2a2ktMTFkNDFhOWMzOGIz"); }catch(e){}
   var TOTAL = 6, step = 1;
   var form = document.getElementById('form');
   var done = document.getElementById('done');
