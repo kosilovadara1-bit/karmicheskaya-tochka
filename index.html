@@ -84,14 +84,35 @@ header.solid{background:rgba(4,22,29,.88);backdrop-filter:blur(14px);box-shadow:
 .nav-links a{font-size:13.5px;letter-spacing:.02em;color:rgba(244,228,200,.78)}
 .nav-links a:hover{color:var(--gold-l)}
 .nav .btn{padding:12px 22px;font-size:13px}
-@media(max-width:900px){.nav-links{display:none}}
+.bshort{display:none}
+.nav-burger{display:none;flex:0 0 auto;width:38px;height:38px;margin-left:8px;
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;
+  border:1px solid rgba(217,166,83,.45);border-radius:12px;background:transparent;padding:0}
+.nav-burger span{display:block;width:18px;height:1.6px;border-radius:2px;background:#E8BA68;transition:.2s}
+.nav-burger[aria-expanded="true"]{background:rgba(217,166,83,.14)}
+.mmenu{display:none;position:fixed;top:74px;left:0;right:0;z-index:59;padding:10px 18px 16px;
+  background:rgba(4,22,29,.97);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(217,166,83,.28);box-shadow:0 24px 50px rgba(0,0,0,.45)}
+.mmenu.on{display:block}
+.mmenu a{display:block;padding:13px 6px;font-size:15px;letter-spacing:.01em;
+  color:rgba(244,228,200,.9);border-bottom:1px solid rgba(244,228,200,.09)}
+.mmenu a:last-child{border-bottom:0}
+.mmenu a:active{color:var(--gold-l)}
+@media(max-width:900px){.nav-links{display:none}.nav-burger{display:flex}}
+@media(min-width:901px){.mmenu{display:none!important}}
 @media(max-width:760px){
   .nav{height:64px}
-  .nav .btn{display:none}
-  .brand b{font-size:11px;letter-spacing:.16em;white-space:nowrap}
+  .nav{gap:8px}
+  .nav .btn{padding:9px 13px;font-size:11px;white-space:nowrap}
+  .bfull{display:none}.bshort{display:inline}
+  .mmenu{top:64px}
+  .brand{gap:8px}
+  .brand b{font-size:10px;letter-spacing:.1em;white-space:nowrap}
   .hero:after{display:none}
   .hero-in{padding-top:96px}
 }
+@media(max-width:342px){.brand b{display:none}}
+@media(max-width:760px){.fab{display:none!important}body{padding-bottom:0}}
 
 /* ---------- hero ---------- */
 .hero{position:relative;background:
@@ -289,9 +310,19 @@ footer{background:#04161D;color:rgba(244,228,200,.62);padding:52px 0 38px;font-s
       <a href="#gift">Подарок</a>
       <a href="#faq">Вопросы</a>
     </nav>
-    <a class="btn btn-gold" href="anketa.html">Пройти диагностику</a>
+    <a class="btn btn-gold" href="anketa.html"><span class="bfull">Пройти диагностику</span><span class="bshort">Диагностика</span></a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="mmenu" id="mmenu">
+  <a href="#author">Обо мне</a>
+  <a href="#inside">Что внутри</a>
+  <a href="uslugi.html">Услуги и цены</a>
+  <a href="#gift">Подарок</a>
+  <a href="#faq">Вопросы</a>
+</div>
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="top">
@@ -334,8 +365,8 @@ footer{background:#04161D;color:rgba(244,228,200,.62);padding:52px 0 38px;font-s
       <p><b>Меня зовут Дарья.</b> Я кармический нумеролог, специалист по адаптивному интеллекту
       и эмоциональному здоровью, автор метода «Твоя кармическая точка».</p>
       <p>Я не предсказываю будущее. Я разбираю кармическую звезду: по дате рождения показываю,
-      где застряла энергия, какая ошибка повторяется из раза в раз и через какую линию духа
-      её проходят. Без «просто поверь» и без обещаний изменить жизнь за вечер.</p>
+      где застряла энергия и какая ошибка повторяется из раза в раз.
+      Без «просто поверь» и без обещаний изменить жизнь за вечер.</p>
       <p>Моя позиция простая: любой разбор чего-то стоит только тогда, когда после него человек
       что-то делает. Поэтому в каждом разборе — три шага. Маленьких, но выполнимых.</p>
       <div class="socials">
@@ -595,6 +626,22 @@ footer{background:#04161D;color:rgba(244,228,200,.62);padding:52px 0 38px;font-s
       document.body.removeChild(t);
     }
   });
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('navBurger'), m=document.getElementById('mmenu');
+  if(!b||!m) return;
+  b.addEventListener('click', function(){
+    var on = m.classList.toggle('on');
+    b.setAttribute('aria-expanded', on ? 'true' : 'false');
+  });
+  m.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ m.classList.remove('on'); b.setAttribute('aria-expanded','false'); }
+  });
+  window.addEventListener('scroll', function(){
+    if(m.classList.contains('on')){ m.classList.remove('on'); b.setAttribute('aria-expanded','false'); }
+  }, {passive:true});
 })();
 </script>
 </body>
