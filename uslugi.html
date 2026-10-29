@@ -90,7 +90,8 @@ h1,h2,h3,.serif{font-family:'PF',Georgia,serif;font-weight:500;line-height:1.16}
 .hero h1{font-size:clamp(30px,3.9vw,44px);margin:14px 0 16px}
 .hero h1 em{font-style:normal;color:var(--gold-l)}
 .hero p{font-size:clamp(15px,2.2vw,18px);color:rgba(244,228,200,.8);max-width:600px}
-.hero .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;max-width:600px}
+.hero .row .btn{padding:13px 20px;font-size:13px}
 .hero p.hero-lead{font-size:clamp(16px,2.1vw,19px);line-height:1.66;color:rgba(244,228,200,.82);max-width:620px}
 
 .btn{display:inline-block;text-decoration:none;border-radius:999px;padding:14px 26px;
@@ -99,7 +100,8 @@ h1,h2,h3,.serif{font-family:'PF',Georgia,serif;font-weight:500;line-height:1.16}
 .btn-gold{background:linear-gradient(135deg,#F5C77A 0%,var(--gold) 48%,var(--gold-l) 100%);color:#1A1206;
           box-shadow:0 12px 30px -10px rgba(217,166,83,.75), inset 0 1px 0 rgba(255,255,255,.35)}
 .btn-gold:hover{box-shadow:0 18px 40px -12px rgba(245,163,74,.85), inset 0 1px 0 rgba(255,255,255,.45)}
-.btn-ghost{border:1px solid rgba(244,228,200,.3);color:var(--cream);background:rgba(244,228,200,.04)}
+.btn-ghost{border:1px solid rgba(244,228,200,.3);color:var(--cream);
+  background:rgba(6,30,38,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 
 /* секции */
 section{padding:52px 0}
@@ -366,6 +368,7 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
     <div class="row">
       <a class="btn btn-gold" href="index.html">Пройти диагностику · бесплатно</a>
       <a class="btn btn-ghost" href="#shema">Как устроена звезда</a>
+      <a class="btn btn-ghost" href="#podrobno">Подробное описание треугольников</a>
     </div>
     </div>
 
@@ -375,6 +378,126 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
 
 <div class="wrap">
 
+  <!-- УСЛУГИ -->
+  <section id="uslugi">
+    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></svg>Услуги</div>
+    <h2 class="sec">Форматы и цены</h2>
+
+    <div class="card gold">
+      <div class="tag">Начать отсюда · 12 минут</div>
+      <div class="head">
+        <div>
+          <h3>Экспресс «Один вопрос»</h3>
+        </div>
+        <div class="price">2 490 ₽</div>
+      </div>
+      <p class="desc">Ты присылаешь дату рождения, одну сферу (или свой вопрос) и пару предложений о том,
+        что происходит. Я записываю для тебя разбор голосом: какая ошибка повторяется именно здесь,
+        чего не хватает и что сделать на этой неделе. По твоим словам, без общих мест.</p>
+      <ul>
+        <li>Для кого: хочешь попробовать формат и получить точный ответ на один вопрос</li>
+        <li>Что получаешь: аудио 12–14 минут + карточка на одну страницу (ошибка, линия духа, шаг)</li>
+        <li>Границы: один вопрос, без переписки и уточнений — поэтому и стоит столько</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Взять экспресс · Telegram</a>
+        <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="tag">Главное · вся карта</div>
+      <div class="head">
+        <div>
+          <h3>Личная встреча «Твоя звезда»</h3>
+        </div>
+        <div class="price">7 900 ₽</div>
+      </div>
+      <p class="desc">Мы собираем твою карту целиком — все шесть сфер — прямо при тебе. Ты видишь,
+        где ошибка, где линия духа, где предназначение, как сферы связаны между собой
+        и с чего начинать именно сейчас.</p>
+      <ul>
+        <li>Для кого: устала ходить по кругу и хочешь увидеть картину целиком, а не по кусочкам</li>
+        <li>Что получаешь: запись встречи, фотографию своей звезды, формулу запроса и три шага на неделю</li>
+        <li>Что решаем: с какой сферы начинаем и каким форматом идём дальше</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на встречу · Telegram</a>
+        <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
+        <span class="note">Свободно 8 мест в месяц</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Глубина · одна сфера</div>
+      <div class="head">
+        <div>
+          <h3>«Шесть недель»</h3>
+        </div>
+        <div class="price">34 900 ₽</div>
+      </div>
+      <p class="desc">Работа с той сферой, которую выбрала на встрече. Не программа «для всех»:
+        каждую неделю мы смотрим, что происходит именно у тебя, и корректируем.</p>
+      <ul>
+        <li>Неделя 1 — сфера вглубь и правило на случай триггера</li>
+        <li>Неделя 2 — родовая линия: что твоё, а что нет</li>
+        <li>Неделя 3 — тренировка линии духа</li>
+        <li>Неделя 4 — разбираем, что сломалось, и правим</li>
+        <li>Неделя 5 — артефакт на одну страницу, который остаётся с тобой</li>
+        <li>Неделя 6 — сверка: что изменилось и что дальше</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Обсудить сопровождение · Telegram</a>
+        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
+        <span class="note">Беру не больше двух человек одновременно</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Группа · только шесть человек</div>
+      <div class="head">
+        <div>
+          <h3>«Круг шести»</h3>
+        </div>
+        <div class="price">12 900 ₽</div>
+      </div>
+      <p class="desc">Шесть человек, шесть сфер, шесть недель. Каждую неделю в центре — одна сфера
+        одного участника: разбор при всех, по его правилам. Остальные примеряют эту сферу на себя.
+        За круг ты проходишь все шесть сфер и получаешь личный разбор своей.</p>
+      <ul>
+        <li>Для кого: хочешь глубже, чем экспресс, но встреча один на один пока дорого</li>
+        <li>Что получаешь: свою неделю с личным разбором, пять недель наблюдения и маленькую группу, где тебя знают</li>
+        <li>Почему шесть: шесть сфер — шесть недель — шесть человек. Не маркетинг, арифметика формата</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Узнать о наборе · Telegram</a>
+        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
+        <span class="note">Следующий круг — по мере набора</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="tag">Возврат · через три месяца</div>
+      <div class="head">
+        <div>
+          <h3>«Сверка»</h3>
+        </div>
+        <div class="price">3 900 ₽</div>
+      </div>
+      <p class="desc">Смотрим, что сдвинулось, что откатилось и с чем идём дальше. Это не «ещё одна
+        консультация»: разговор про результат, который ты уже получила.</p>
+      <ul>
+        <li>Для тех, кто прошёл «Шесть недель» или «Круг шести» — 3 900 ₽</li>
+        <li>После разовой встречи — 4 900 ₽</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на сверку · Telegram</a>
+        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
+      </div>
+    </div>
+
+  </section>
+
   <!-- МЕТОД -->
   <section id="metod">
     <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M19 5l-4 4M9 15l-4 4"/></svg>Метод</div>
@@ -383,18 +506,18 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
        как на нас влияет номер дома или квартиры, почему события приходят именно в эти даты.
        Но главный числовой код человека — <b>дата рождения</b>. В ней зашиты характер, таланты,
        кармические задачи и миссия этого воплощения.</p>
-    <p class="lead"><b>Карма</b> — это не наказание и не «судьба». Это след: то, что ты уже сделала,
-       и то, что тебе возвращается тем же поступком. Проще говоря — привычка, которая повторяется,
-       пока её не увидят. Карма показывает, где ты ходишь по кругу.</p>
+    <p class="lead"><b>Карма.</b> Всем известное слово. <b>Карма и дхарма</b> — это закон
+       причинно-следственной связи. <b>Карма</b> – это последствие негативных поступков человека,
+       <b>дхарма</b> – позитивных. Они отражают принцип влияния прошлых действий человека на текущее
+       положение дел и его судьбу в будущем. В нумерологии мы рассматриваем именно карму человека.
+       Кармическая нумерология даёт ответы на те вопросы, на которые мы не можем получить ответ иногда.
+       То есть какие-то, возможно, кармические задачи либо вопросы, касаемо явлений, которые нам неизвестны.</p>
     <p class="lead"><b>Дхарма</b> — вторая половина того же закона. Это твоё действие «по назначению»:
        то, что ты делаешь из своей силы, а не из страха. Там, где карма объясняет, почему повторяется,
        дхарма показывает, чем это заменить. Одно без другого не работает: увидеть ошибку и не дать
        себе нового действия — значит вернуться в тот же круг.</p>
-    <p class="lead">Кармическая нумерология читает этот след по дате рождения: где карма держит,
-       а где открыта дхарма — и какое конкретное действие их разделяет.</p>
     <p class="lead">«Кармическая звезда» — способ увидеть всё это сразу. Пять треугольников — Личность,
-       Духовность, Реализация, Отношения, Здоровье — и шестая сфера: Высшая миссия души.
-       В каждом треугольнике три вершины, и они связаны в одну цепочку.</p>
+       Духовность, Реализация, Отношения, Здоровье — и шестая сфера: Высшая миссия души.</p>
 
     <div class="chain">
       <div class="step">
@@ -578,126 +701,6 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
     </ol>
   </section>
 
-  <!-- УСЛУГИ -->
-  <section id="uslugi">
-    <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></svg>Услуги</div>
-    <h2 class="sec">Форматы и цены</h2>
-
-    <div class="card gold">
-      <div class="tag">Начать отсюда · 12 минут</div>
-      <div class="head">
-        <div>
-          <h3>Экспресс «Один вопрос»</h3>
-        </div>
-        <div class="price">2 490 ₽</div>
-      </div>
-      <p class="desc">Ты присылаешь дату рождения, одну сферу (или свой вопрос) и пару предложений о том,
-        что происходит. Я записываю для тебя разбор голосом: какая ошибка повторяется именно здесь,
-        чего не хватает и что сделать на этой неделе. По твоим словам, без общих мест.</p>
-      <ul>
-        <li>Для кого: хочешь попробовать формат и получить точный ответ на один вопрос</li>
-        <li>Что получаешь: аудио 12–14 минут + карточка на одну страницу (ошибка, линия духа, шаг)</li>
-        <li>Границы: один вопрос, без переписки и уточнений — поэтому и стоит столько</li>
-      </ul>
-      <div class="actions">
-        <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Взять экспресс · Telegram</a>
-        <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
-      </div>
-    </div>
-
-    <div class="card gold">
-      <div class="tag">Главное · вся карта</div>
-      <div class="head">
-        <div>
-          <h3>Личная встреча «Твоя звезда»</h3>
-        </div>
-        <div class="price">7 900 ₽</div>
-      </div>
-      <p class="desc">Мы собираем твою карту целиком — все шесть сфер — прямо при тебе. Ты видишь,
-        где ошибка, где линия духа, где предназначение, как сферы связаны между собой
-        и с чего начинать именно сейчас.</p>
-      <ul>
-        <li>Для кого: устала ходить по кругу и хочешь увидеть картину целиком, а не по кусочкам</li>
-        <li>Что получаешь: запись встречи, фотографию своей звезды, формулу запроса и три шага на неделю</li>
-        <li>Что решаем: с какой сферы начинаем и каким форматом идём дальше</li>
-      </ul>
-      <div class="actions">
-        <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на встречу · Telegram</a>
-        <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
-        <span class="note">Свободно 8 мест в месяц</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="tag">Глубина · одна сфера</div>
-      <div class="head">
-        <div>
-          <h3>«Шесть недель»</h3>
-        </div>
-        <div class="price">34 900 ₽</div>
-      </div>
-      <p class="desc">Работа с той сферой, которую выбрала на встрече. Не программа «для всех»:
-        каждую неделю мы смотрим, что происходит именно у тебя, и корректируем.</p>
-      <ul>
-        <li>Неделя 1 — сфера вглубь и правило на случай триггера</li>
-        <li>Неделя 2 — родовая линия: что твоё, а что нет</li>
-        <li>Неделя 3 — тренировка линии духа</li>
-        <li>Неделя 4 — разбираем, что сломалось, и правим</li>
-        <li>Неделя 5 — артефакт на одну страницу, который остаётся с тобой</li>
-        <li>Неделя 6 — сверка: что изменилось и что дальше</li>
-      </ul>
-      <div class="actions">
-        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Обсудить сопровождение · Telegram</a>
-        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
-        <span class="note">Беру не больше двух человек одновременно</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="tag">Группа · только шесть человек</div>
-      <div class="head">
-        <div>
-          <h3>«Круг шести»</h3>
-        </div>
-        <div class="price">12 900 ₽</div>
-      </div>
-      <p class="desc">Шесть человек, шесть сфер, шесть недель. Каждую неделю в центре — одна сфера
-        одного участника: разбор при всех, по его правилам. Остальные примеряют эту сферу на себя.
-        За круг ты проходишь все шесть сфер и получаешь личный разбор своей.</p>
-      <ul>
-        <li>Для кого: хочешь глубже, чем экспресс, но встреча один на один пока дорого</li>
-        <li>Что получаешь: свою неделю с личным разбором, пять недель наблюдения и маленькую группу, где тебя знают</li>
-        <li>Почему шесть: шесть сфер — шесть недель — шесть человек. Не маркетинг, арифметика формата</li>
-      </ul>
-      <div class="actions">
-        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Узнать о наборе · Telegram</a>
-        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
-        <span class="note">Следующий круг — по мере набора</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="tag">Возврат · через три месяца</div>
-      <div class="head">
-        <div>
-          <h3>«Сверка»</h3>
-        </div>
-        <div class="price">3 900 ₽</div>
-      </div>
-      <p class="desc">Смотрим, что сдвинулось, что откатилось и с чем идём дальше. Это не «ещё одна
-        консультация»: разговор про результат, который ты уже получила.</p>
-      <ul>
-        <li>Для тех, кто прошёл «Шесть недель» или «Круг шести» — 3 900 ₽</li>
-        <li>После разовой встречи — 4 900 ₽</li>
-      </ul>
-      <div class="actions">
-        <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на сверку · Telegram</a>
-        <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
-      </div>
-    </div>
-
-  </section>
-
   <!-- ПОДРОБНО -->
   <section id="podrobno">
     <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a2 2 0 1 1 2 2 4 4 0 1 1-4-4 7 7 0 1 1 7 7 10 10 0 1 1-10-10"/></svg>Подробно</div>
@@ -836,6 +839,8 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
   <div class="foot">
     <div>© Дарья Косилова · Кармическая нумерология</div>
     <div class="links">
+      <a href="obo-mne.html">Обо мне</a>
+      <a href="otzyvy.html">Отзывы</a>
       <a href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Telegram</a>
       <a href="https://vk.ru/kosilova94" target="_blank" rel="noopener">ВКонтакте</a>
       <a href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
