@@ -63,7 +63,7 @@ section{padding:40px 0}
 .sec-p{font-size:15.5px;line-height:1.66;color:rgba(244,228,200,.72);max-width:620px;margin-bottom:26px}
 
 /* цитаты */
-.quotes{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;align-items:start}
+.quotes{display:grid;grid-template-columns:1fr;gap:16px;align-items:start;max-width:820px}
 .quote{border:1px solid rgba(214,160,77,.30);border-radius:18px;padding:26px 26px 22px;
   background:linear-gradient(165deg,rgba(8,42,52,.86),rgba(6,22,30,.92));position:relative}
 .quote:before{content:"«";position:absolute;top:2px;left:18px;font-family:'PF',Georgia,serif;
@@ -99,6 +99,15 @@ section{padding:40px 0}
 .vid b{display:block;font-family:'PF',Georgia,serif;font-size:18px;color:var(--white);font-weight:500}
 .vid span{font-size:13px;color:rgba(244,228,200,.6)}
 
+/* кейсы */
+.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.key{border:1px dashed rgba(214,160,77,.42);border-radius:16px;padding:22px 20px;
+  background:linear-gradient(160deg,rgba(9,44,54,.55),rgba(6,22,30,.7))}
+.key span{display:block;font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:8px}
+.key b{display:block;font-family:'PF',Georgia,serif;font-size:19px;font-weight:500;color:rgba(248,240,225,.9);margin-bottom:8px}
+.key p{font-size:13.5px;line-height:1.6;color:rgba(244,228,200,.6)}
+
 /* финал */
 .final{text-align:center;padding:54px 22px;border-radius:22px;margin:30px 0 10px;
   border:1px solid rgba(214,160,77,.30);
@@ -128,6 +137,7 @@ section{padding:40px 0}
 
 @media(max-width:900px){
   .quotes{grid-template-columns:1fr}
+  .keys{grid-template-columns:1fr}
   .masonry{columns:2}
   .docs{grid-template-columns:repeat(3,1fr)}
   .vids{grid-template-columns:1fr}
@@ -164,16 +174,11 @@ section{padding:40px 0}
       <a class="btn btn-gold" href="index.html">Пройти диагностику · бесплатно</a>
       <a class="btn btn-ghost" href="https://t.me/OtzoviDarya" target="_blank" rel="noopener">Канал с отзывами</a>
     </div>
-    <div class="nums">
-      <div><b>39</b><span>скриншотов отзывов</span></div>
-      <div><b>22</b><span>сертификатов и благодарностей</span></div>
-      <div><b>2</b><span>видео</span></div>
-    </div>
   </header>
 
   <section id="words">
     <h2 class="sec-h">Словами</h2>
-    <p class="sec-p">Два развёрнутых отзыва, которые я храню отдельно: в них сказано то, что не влезает в скриншот.</p>
+    <p class="sec-p">Развёрнутый отзыв, который я храню отдельно: в нём сказано то, что не влезает в скриншот.</p>
     <div class="quotes">
       <div class="quote big">
         <p>Дашенька, спасибо тебе огромное! ❤️
@@ -190,18 +195,12 @@ section{padding:40px 0}
         <div class="who"><span>Tatyanka Kazantseva · веб-дизайнер</span>
           <a href="https://t.me/OtzoviDarya/83" target="_blank" rel="noopener">Пост в канале</a></div>
       </div>
-      <div class="quote">
-        <p>Особенно ценно, что в этом участвуют руководители компании.
-Они так же благодарят сотрудников за активность и работу 🔥💥💣</p>
-        <div class="who"><span>Отзыв руководителя</span>
-          <a href="https://t.me/OtzoviDarya/74" target="_blank" rel="noopener">Пост в канале</a></div>
-      </div>
     </div>
   </section>
 
   <section id="reviews">
     <h2 class="sec-h">Скриншоты отзывов</h2>
-    <p class="sec-p">39 скриншотов из канала: сообщения, ответы после сессий, благодарности от руководителей
+    <p class="sec-p">Скриншоты из канала: сообщения, ответы после сессий, благодарности от руководителей
     и участников программ. Нажмите на любой — откроется крупнее.</p>
     <div class="masonry">
 <figure class="shot masonry-i"><button type="button" class="shot-btn" data-full="otzyvy/23.jpg"><img src="otzyvy/23.jpg" alt="Отзыв" loading="lazy" decoding="async"></button></figure>
@@ -287,6 +286,20 @@ section{padding:40px 0}
     </div>
   </section>
 
+  <section id="keys">
+    <h2 class="sec-h">Кейс</h2>
+    <p class="sec-p">Отдельный раздел: истории целиком — с чем пришли, что делали и что изменилось.
+    Собираю их сейчас, добавлю сюда позже.</p>
+    <div class="keys">
+      <div class="key ph"><span>Кейс</span><b>Скоро здесь</b>
+        <p>Разбор по шагам: точка входа, что мешало, что сделали и какой результат.</p></div>
+      <div class="key ph"><span>Кейс</span><b>Скоро здесь</b>
+        <p>История из практики — с цифрами, сроками и честным «до / после».</p></div>
+      <div class="key ph"><span>Кейс</span><b>Скоро здесь</b>
+        <p>Кейс про команду или про личный запрос — как договоримся.</p></div>
+    </div>
+  </section>
+
   <div class="final">
     <h2>Лучше один раз проверить</h2>
     <p>Отзывы читаются легко, но пока не попробуешь — не узнаешь. Разбор бесплатный: три вопроса,
@@ -300,6 +313,7 @@ section{padding:40px 0}
       <a href="https://t.me/OtzoviDarya" target="_blank" rel="noopener">Канал отзывов</a>
       <a href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Telegram</a>
       <a href="uslugi.html">Услуги и цены</a>
+      <a href="obo-mne.html">Обо мне</a>
       <a href="privacy.html">Политика конфиденциальности</a>
       <a href="index.html">На главную</a>
     </div>
