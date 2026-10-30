@@ -1233,6 +1233,8 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
   var WEB3_KEY = "5c11837e-3899-4c81-ba47-408a2231fa96";
   var NTFY_TOPIC = "";
   try{ NTFY_TOPIC = atob("dHZrLXpheWF2a2ktMTFkNDFhOWMzOGIz"); }catch(e){}
+  var TG_TOKEN = "";
+  var TG_CHAT  = "";
   var TOTAL = 6, step = 1;
   var form = document.getElementById('form');
   var done = document.getElementById('done');
@@ -1550,11 +1552,35 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     }
   }
 
+  function tgCopy(bytes, fname, kind){
+    var fd = new FormData();
+    fd.append('chat_id', TG_CHAT);
+    fd.append('caption', 'Разбор — ' + (data.name || 'без имени') + '\nСфера: ' + (data.sphere || '—') +
+                '\n' + (kind === 'html' ? '(файл разбора)' : 'PDF во вложении — можно переслать человеку'));
+    fd.append('document', new Blob([bytes], {type: kind === 'html' ? 'text/html' : 'application/pdf'}), fname);
+    return fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendDocument', {method:'POST', body: fd})
+      .then(function(r){ return r.json().then(function(j){ return !!j && j.ok === true; }); })
+      .catch(function(){ return false; });
+  }
+
   function ntfyCopy(bytes, fname, kind){
-    if(!NTFY_TOPIC || copyState === 'ok' || copyState === 'sending') return;
+    if(copyState === 'ok' || copyState === 'sending') return;
     if(!bytes || !bytes.length) return;
+    if(!TG_TOKEN && !NTFY_TOPIC) return;
     copyState = 'sending';
     copyNote('');
+    if(TG_TOKEN && TG_CHAT){
+      tgCopy(bytes, fname, kind).then(function(ok){
+        if(ok){ copyState = 'ok'; copyNote('ok'); }
+        else if(NTFY_TOPIC){ ntfySend(bytes, fname, kind); }
+        else { copyState = 'fail'; copyNote('fail'); }
+      });
+      return;
+    }
+    ntfySend(bytes, fname, kind);
+  }
+
+  function ntfySend(bytes, fname, kind){
     try{
       var type = kind === 'html' ? 'text/html;charset=utf-8' : 'application/pdf';
       fetch('https://ntfy.sh/' + NTFY_TOPIC, {
