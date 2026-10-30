@@ -189,6 +189,20 @@ h2.sec:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:2px;
            color:#1A1208;background:linear-gradient(135deg,#F5C77A,var(--gold) 55%,var(--gold-l));
            border-radius:999px;padding:5px 13px;margin-bottom:14px;
            box-shadow:0 8px 20px -10px rgba(217,166,83,.9)}
+.card .pbl{margin-top:18px;display:grid;gap:13px}
+.card .p-row{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;
+      border-top:1px solid rgba(217,166,83,.16);padding-top:13px}
+.card .p-row.first{border-top:0;padding-top:0}
+.card .p-k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+      font-weight:700;padding-top:4px;line-height:1.5}
+.card .p-row p{font-size:14.5px;line-height:1.62;color:rgba(243,229,206,.92);margin:0}
+.card .p-row ul{margin:0;gap:6px}
+.card .p-row li{font-size:14px;line-height:1.55}
+.card .price-note{margin-top:12px;font-size:12.5px;color:rgba(244,228,200,.5);line-height:1.6}
+@media(max-width:640px){
+  .card .p-row{grid-template-columns:1fr;gap:6px;padding-top:12px}
+  .card .p-k{padding-top:0}
+}
 .card .actions{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .card .actions .note{font-size:12.5px;color:rgba(244,228,200,.45)}
 
@@ -433,6 +447,9 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
     <div class="kicker"><svg class="sec-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 3"/></svg>Услуги</div>
     <h2 class="sec">Форматы и цены</h2>
 
+    <p class="lead">Пять форматов — от 12 минут до шести недель. Выбирай тот, что по силам сейчас:
+      можно начать с одного вопроса и вернуться за большим.</p>
+
     <div class="card gold">
       <div class="tag">Начать отсюда · 12 минут</div>
       <div class="head">
@@ -441,20 +458,38 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
         </div>
         <div class="price">2 490 ₽</div>
       </div>
-      <p class="desc">Ты присылаешь дату рождения, одну сферу (или свой вопрос) и пару предложений о том,
-        что происходит. Я записываю для тебя разбор голосом: какая ошибка повторяется именно здесь,
-        чего не хватает и что сделать на этой неделе. По твоим словам, без общих мест.</p>
-      <ul>
-        <li>Для кого: хочешь попробовать формат и получить точный ответ на один вопрос</li>
-        <li>Что получаешь: аудио 12–14 минут + карточка на одну страницу (ошибка, линия духа, шаг)</li>
-      </ul>
+      <p class="desc">Один вопрос — один точный разбор голосом. Без курсов и «приходите на программу».</p>
+
+      <div class="pbl">
+        <div class="p-row first">
+          <div class="p-k">Тебе сюда, если</div>
+          <ul>
+            <li>Один и тот же сюжет повторяется — в работе, деньгах или отношениях — и ты не понимаешь почему</li>
+            <li>Вопрос крутится в голове месяцами, а ясности всё нет</li>
+            <li>Хочется сначала попробовать метод, а не покупать сразу весь путь</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Задача</div>
+          <p>Увидеть, какая ошибка стоит именно за твоим вопросом, и что с ней делать уже на этой неделе.</p>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Результат</div>
+          <ul>
+            <li>Аудио 12–14 минут — разбор твоего вопроса, по твоим словам</li>
+            <li>Карточка на одну страницу: ошибка → линия духа → шаг</li>
+            <li>Один конкретный шаг, который можно сделать на этой неделе</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="actions">
         <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Взять экспресс · Telegram</a>
         <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
       </div>
     </div>
 
-    <div class="card gold">
+    <div class="card">
       <div class="tag">Главное · вся карта</div>
       <div class="head">
         <div>
@@ -462,14 +497,32 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
         </div>
         <div class="price">7 900 ₽</div>
       </div>
-      <p class="desc">Мы собираем твою карту целиком — все шесть сфер — прямо при тебе. Ты видишь,
-        где ошибка, где линия духа, где предназначение, как сферы связаны между собой
-        и с чего начинать именно сейчас.</p>
-      <ul>
-        <li>Для кого: устала ходить по кругу и хочешь увидеть картину целиком, а не по кусочкам</li>
-        <li>Что получаешь: фотографию своей звезды, формулу своего запроса и три шага на неделю</li>
-        <li>Что решаем: с какой сферы начинаем и каким форматом идём дальше</li>
-      </ul>
+      <p class="desc">Два часа один на один. Собираем всю твою карту — шесть сфер — прямо при тебе.</p>
+
+      <div class="pbl">
+        <div class="p-row first">
+          <div class="p-k">Тебе сюда, если</div>
+          <ul>
+            <li>Устала ходить по кругу: одно и то же в работе, деньгах, отношениях</li>
+            <li>Чувствуешь, что силы уходят не туда, но не видно, где именно</li>
+            <li>Нужна картина целиком, а не отдельные кусочки</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Задача</div>
+          <p>Показать, как связаны шесть сфер, и выбрать, с какой начинать именно сейчас.</p>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Результат</div>
+          <ul>
+            <li>Фотография своей звезды — вся карта, остаётся у тебя</li>
+            <li>Формула своего запроса: что на самом деле просишь и куда идёшь</li>
+            <li>Три шага на неделю — не «когда-нибудь», а с понедельника</li>
+            <li>Ясность: с какой сферы начинаем и каким форматом идём дальше</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="actions">
         <a class="btn btn-gold" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на встречу · Telegram</a>
         <a class="btn btn-ghost" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
@@ -485,16 +538,33 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
         </div>
         <div class="price">34 900 ₽</div>
       </div>
-      <p class="desc">Работа с той сферой, которую выбрала на встрече. Не программа «для всех»:
-        каждую неделю мы смотрим, что происходит именно у тебя, и корректируем.</p>
-      <ul>
-        <li>Неделя 1 — сфера вглубь и правило на случай триггера</li>
-        <li>Неделя 2 — родовая линия: что твоё, а что нет</li>
-        <li>Неделя 3 — тренировка линии духа</li>
-        <li>Неделя 4 — разбираем, что сломалось, и правим</li>
-        <li>Неделя 5 — артефакт на одну страницу, который остаётся с тобой</li>
-        <li>Неделя 6 — сверка: что изменилось и что дальше</li>
-      </ul>
+      <p class="desc">Шесть недель работы с одной сферой — той, где сейчас сложнее всего.</p>
+
+      <div class="pbl">
+        <div class="p-row first">
+          <div class="p-k">Тебе сюда, если</div>
+          <ul>
+            <li>Понимаешь, где болит, но одной встречи мало — нужны время и поддержка</li>
+            <li>Тянешь всё на себе: работа, дом, семья, все сферы сразу</li>
+            <li>Хочешь не «понять», а чтобы в жизни действительно что-то изменилось</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Задача</div>
+          <p>Не программа «для всех», а шесть недель под твою сферу — с правками по ходу.</p>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Результат</div>
+          <ul>
+            <li>Сфера вглубь и правило на случай триггера</li>
+            <li>Родовая линия разобрана: что твоё, а что нет</li>
+            <li>Тренированная линия духа</li>
+            <li>Артефакт на одну страницу, который остаётся с тобой</li>
+            <li>Сверка: что изменилось и что дальше</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="actions">
         <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Обсудить сопровождение · Telegram</a>
         <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
@@ -510,14 +580,32 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
         </div>
         <div class="price">12 900 ₽</div>
       </div>
-      <p class="desc">Шесть человек, шесть сфер, шесть недель. Каждую неделю в центре — одна сфера
-        одного участника: разбор при всех, по его правилам. Остальные примеряют эту сферу на себя.
-        За круг ты проходишь все шесть сфер и получаешь личный разбор своей.</p>
-      <ul>
-        <li>Для кого: хочешь глубже, чем экспресс, но ещё не готова идти на встречу один на один</li>
-        <li>Что получаешь: свою неделю с личным разбором, пять недель наблюдения и маленькую группу, где тебя знают</li>
-        <li>Почему шесть: шесть сфер — шесть недель — шесть человек</li>
-      </ul>
+      <p class="desc">Шесть человек, шесть сфер, шесть недель. Каждую неделю в центре — один участник.</p>
+
+      <div class="pbl">
+        <div class="p-row first">
+          <div class="p-k">Тебе сюда, если</div>
+          <ul>
+            <li>Хочешь глубже, чем экспресс, но ещё не готова идти на встречу один на один</li>
+            <li>Легче, когда рядом есть люди с похожим запросом</li>
+            <li>Нужна не лекция, а своя неделя в центре внимания</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Задача</div>
+          <p>Разобрать твою сферу при группе — по твоим правилам — и увидеть себя в шести чужих историях.</p>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Результат</div>
+          <ul>
+            <li>Своя неделя с личным разбором</li>
+            <li>Пять недель наблюдения — чужие сферы как зеркало своих</li>
+            <li>Маленькая группа, где тебя знают</li>
+            <li>Шесть сфер, пройденных на себе</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="actions">
         <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Узнать о наборе · Telegram</a>
         <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
@@ -531,14 +619,36 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
         <div>
           <h3>«Сверка»</h3>
         </div>
-        <div class="price">3 900 ₽</div>
+        <div class="price">от 3 900 ₽</div>
       </div>
-      <p class="desc">Смотрим, что сдвинулось, что откатилось и с чем идём дальше. Это не «ещё одна
-        консультация»: разговор про результат, который ты уже получила.</p>
-      <ul>
-        <li>Для тех, кто прошёл «Шесть недель» или «Круг шести» — 3 900 ₽</li>
-        <li>После разовой встречи — 4 900 ₽</li>
-      </ul>
+      <p class="desc">Разговор про результат, который ты уже получила.</p>
+
+      <div class="pbl">
+        <div class="p-row first">
+          <div class="p-k">Тебе сюда, если</div>
+          <ul>
+            <li>После разбора что-то сдвинулось, а что делать дальше — непонятно</li>
+            <li>Хочется проверить, идёшь ли ты туда, а не просто «чем-то занимаешься»</li>
+            <li>Кажется, что откатилась назад, и нужен честный взгляд со стороны</li>
+          </ul>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Задача</div>
+          <p>Увидеть, что сдвинулось, что откатилось и с чем идём дальше.</p>
+        </div>
+        <div class="p-row">
+          <div class="p-k">Результат</div>
+          <ul>
+            <li>Честная карта «до / сейчас»</li>
+            <li>Что работает — оставить, что откатилось — вернуть</li>
+            <li>Следующий шаг на один-три месяца</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="price-note">3 900 ₽ — для тех, кто прошёл «Шесть недель» или «Круг шести».
+         После разовой встречи — 4 900 ₽.</p>
+
       <div class="actions">
         <a class="btn btn-ghost" href="https://t.me/DaryaKosilova" target="_blank" rel="noopener">Записаться на сверку · Telegram</a>
         <a class="btn btn-gold" href="https://max.ru/u/f9LHodD0cOIhLX5enu_iaYSXmnx7HPmiKiSYf9LsBRTRvzuCnK0zb2vO3y0" target="_blank" rel="noopener">MAX</a>
