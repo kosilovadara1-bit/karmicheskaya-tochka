@@ -392,32 +392,50 @@ details p{margin-top:10px;font-size:14px;color:rgba(244,228,200,.7)}
   .card{padding:22px 18px}
   .card .price{font-size:22px}
 }
+/* ── контраст: белый текст, светящееся золото, объём карточек ── */
+.card{box-shadow:0 30px 70px -34px rgba(0,0,0,1), 0 0 0 1px rgba(255,198,110,.07) inset,
+      0 0 40px -18px rgba(255,198,110,.16)}
+.card:hover{box-shadow:0 36px 80px -34px rgba(0,0,0,1), 0 0 0 1px rgba(255,198,110,.1) inset,
+      0 0 54px -14px rgba(255,198,110,.26)}
+.card .head{flex-wrap:nowrap;align-items:flex-start;gap:16px}
+.card .head>div:first-child{flex:1 1 auto;min-width:0}
+.card .price{flex:0 0 auto;line-height:1;margin-top:1px;
+      text-shadow:0 0 22px rgba(255,198,110,.55), 0 0 46px rgba(255,198,110,.28)}
+.card .blk-k{color:#FFD089;text-shadow:0 0 16px rgba(255,198,110,.4)}
+.card .blk-k:before{background:#FFC66E;box-shadow:0 0 12px rgba(255,198,110,.6)}
+.card ol.steps li:before{color:#FFDFAC;border-color:rgba(255,198,110,.75);
+      background:rgba(255,198,110,.16);box-shadow:0 0 18px -4px rgba(255,198,110,.45)}
+.card ul.weeks li:before{color:#FFC66E;text-shadow:0 0 10px rgba(255,198,110,.6)}
+.kicker{color:#FFD089;text-shadow:0 0 16px rgba(255,198,110,.35)}
+.card .tag{box-shadow:0 10px 26px -10px rgba(217,166,83,1), 0 0 24px -6px rgba(255,198,110,.5)}
+.btn-gold{box-shadow:0 14px 34px -12px rgba(217,166,83,.85), 0 0 26px -8px rgba(255,198,110,.45),
+      inset 0 1px 0 rgba(255,255,255,.35)}
 /* ── читаемость: светлее, крупнее, контрастнее ── */
-.hero p,.hero p.hero-lead{color:rgba(251,243,230,.93);text-shadow:0 1px 14px rgba(0,0,0,.28)}
-.lead{color:rgba(251,243,230,.95);font-size:17px;line-height:1.62}
-.card .desc{color:#FBF3E6;font-size:15.5px;line-height:1.72}
-.card .blk p{color:#FBF3E6;font-size:16px;line-height:1.75}
-.card ol.steps li{color:#FBF3E6;font-size:16px;line-height:1.72}
-.card ul.weeks li{color:#FBF3E6;font-size:16px;line-height:1.72}
+.hero p,.hero p.hero-lead{color:rgba(255,248,236,.96);text-shadow:0 1px 14px rgba(0,0,0,.28)}
+.lead{color:#FFF8EC;font-size:17px;line-height:1.62}
+.card .desc{color:#FFF8EC;font-size:15.5px;line-height:1.72}
+.card .blk p{color:#FFF8EC;font-size:16px;line-height:1.75}
+.card ol.steps li{color:#FFF8EC;font-size:16px;line-height:1.72}
+.card ul.weeks li{color:#FFF8EC;font-size:16px;line-height:1.72}
 .card ul.weeks li b{color:#FFF9EF}
-.card li{font-size:15px;color:#FBF3E6}
+.card li{font-size:15px;color:#FFF8EC}
 .card .blk-k{color:#FFC66E;font-size:11px;letter-spacing:.19em}
 .card .blk-k:before{background:#FFC66E;opacity:.9}
 .card ol.steps li:before{color:#FFD79A;border-color:rgba(255,198,110,.62);background:rgba(255,198,110,.14);font-weight:700}
 .card ul.weeks li:before{color:#FFC66E;font-size:12px}
-.card .price-note{color:rgba(251,243,230,.82);font-size:13.5px;line-height:1.7}
-.card .actions .note{color:rgba(251,243,230,.66);font-size:13px}
-.steps li{color:#FBF3E6;font-size:16px;line-height:1.72}
+.card .price-note{color:rgba(255,248,236,.88);font-size:13.5px;line-height:1.7}
+.card .actions .note{color:rgba(255,248,236,.76);font-size:13px}
+.steps li{color:#FFF8EC;font-size:16px;line-height:1.72}
 .steps b{color:#FFF9EF}
-details p{color:rgba(251,243,230,.88);font-size:14.5px;line-height:1.7}
+details p{color:rgba(255,248,236,.92);font-size:14.5px;line-height:1.7}
 summary{color:#FFF9EF}
-.tr-body p{color:rgba(251,243,230,.95)}
-.chain p,.sp .what{color:rgba(251,243,230,.92)}
-.sp .who{color:rgba(251,243,230,.76)}
-.final p{color:rgba(251,243,230,.93)}
-.tz-txt span{color:rgba(251,243,230,.78)}
-.foot{color:rgba(251,243,230,.72)}
-.hc span{color:rgba(251,243,230,.88)}
+.tr-body p{color:#FFF8EC}
+.chain p,.sp .what{color:rgba(255,248,236,.95)}
+.sp .who{color:rgba(255,248,236,.82)}
+.final p{color:rgba(255,248,236,.96)}
+.tz-txt span{color:rgba(255,248,236,.84)}
+.foot{color:rgba(255,248,236,.8)}
+.hc span{color:rgba(255,248,236,.92)}
 @media(max-width:640px){
   .card .blk p,.card ol.steps li,.card ul.weeks li,.card .desc{font-size:15.5px}
   .steps li{font-size:15.5px}
