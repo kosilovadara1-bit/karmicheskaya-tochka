@@ -1546,7 +1546,7 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
       el.innerHTML = '<b>Копия не ушла автоматически.</b> Напиши мне в Telegram —' +
                      ' я пришлю разбор вручную.';
     }else{
-      el.innerHTML = '<b>Отправляю копию разбора мне…</b>';
+      el.innerHTML = '<b>Отправляю копию разбора Дарье…</b>';
     }
   }
 
@@ -1685,6 +1685,8 @@ textarea:focus,input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
     var leadText = '';
     function finish(ok){
       form.style.display = 'none';
+      var sl = document.getElementById('stepLbl');
+      if(sl) sl.style.display = 'none';
       done.classList.add('on');
       prebuildPdf();
       var txt = 'Разбор: ' + data.sphere + '\nСитуация: ' + data.a2 + '\nХочу: ' + data.a3 + '\nИмя: ' + data.name + '\nПочта: ' + data.email;
